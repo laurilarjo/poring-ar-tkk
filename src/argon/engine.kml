@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Style id="undecorated_style">
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode> <!-- no styling applied to balloon -->
+		</BalloonStyle>
+	</Style>
+	
+	<NetworkLink>
+		<name>Layout</name>
+		<description>Provides Engine with basic UI functions</description>
+		<Link>
+			<href>http://poringar.appspot.com/argon/layout.kml</href>
+			<!-- <href>http://larkki-imac/argon/layout.kml</href> -->
+		</Link>
+	</NetworkLink>
+	
+	<NetworkLink>
+		<name>MonsterData</name>
+		<description>Provides Engine with Monster Data</description>
+		<Link>
+			<href>http://poringar.appspot.com/argon/monsters.kml</href>
+			<!-- <href>http://larkki-imac/argon/monsters.kml</href>-->
+		</Link>
+	</NetworkLink>
+	
+	<Placemark id="engine_object">
+        <name>Poring</name>
+        <description><![CDATA[
+        	<script language="text/javascript">
+        	
+        	function Creature(maxHP, attackPower, name) {
+        		this.maxHP = maxHP;
+        		this.currentHP = this.maxHP;
+        		this.name = name;
+        		this.attackPower = attackPower;
+        		this.position = null;
+        		
+	        	this.getHPPercentage = function() {
+	        		return this.currentHP / this.maxHP;
+	        	};
+	        	
+      			this.attack = function(targetCreature) {
+	        		if (targetCreature instanceof Creature) {
+	        			var dmg = (1 + Math.random()) * this.attackPower;
+	        			targetCreature.currentHP -= dmg;
+	        			if (targetCreature.currentHP < 0)
+	        				targetCreature.currentHP = 0;
+	        			return true;
+	        		}
+	        		return false;
+      			};
+      			
+      			this.isAlive = function() {
+      				return this.currentHP > 0;
+      			}
+        	}
+        	
+        	function Player(maxMana) {
+      			this.maxMana = maxMana;
+      			this.currentMana = this.maxMana;
+      			
+	        	this.heal = function(targetPlayer) {
+	        		if (targetPlayer instanceof Player) {
+		        		var manaReq = Math.round((0.25 + Math.random()) * 25);
+		        		if (this.currentMana > this.currentMana - manaReq) {
+		        			this.currentMana -= manaReq;
+			        		targetPlayer.currentHP += Math.round((0.5 + Math.random()) * this.attack);
+			        		if (targetPlayer.currentHP > targetPlayer.maxHP)
+			        			targetPlayer.currentHP = targetPlayer.maxHP;
+			        		return true;
+		        		}
+	        		}
+	        		return false;
+	        	};
+	        	
+	        	this.useManaPot = function() {
+	        		this.currentMana += 50;
+	        		if (this.currentMana > this.maxMana)
+	        			this.currentMana = this.maxMana;
+	        	};
+        	}
+        	
+        	Player.prototype = new Creature(200, 50, "Fraktile");
+        	
+        	function Engine() {
+        		this.player = new Player(100);
+        		this.currentMonster = null;
+        		
+        		this.setCurrentMonster = function(targetMonster) {
+					if (targetMonster instanceof Monster) {
+	        			this.currentMonster = targetMonster;
+	        			$('#sword-div').bind('click', function(event) {
+	        				this.player.attack(this.currentMonster);
+	        			});
+	        			$('#heal-div').bind('click', function(event) {
+	        				this.player.heal(this.player);
+	        			});
+	        			$('#mana-div').bind('click', function(event) {
+	        				this.player.useManaPot();
+	        			});
+	        			//alert("CurrentMonster set!");
+	        			return true;
+        			}
+        			return false;
+        		}
+        	}
+        	
+        	function engine_object_init() {
+        		this.engine = new Engine();
+        	}
+        	
+        	function getRunningEngine() {
+        		return this.engine;
+        	}
+        	
+			</script>
+			
+			<div>This is the Poring AR Engine. Do not touch me!</div>
+        ]]></description>
+        <balloonVisibility>1</balloonVisibility>
+        <Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+            	<latitude units="meters">5.0</latitude>
+                <longitude units="meters">5.0</longitude>
+                <altitude>0.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+			<orientation>
+				<heading>0.0</heading>
+				<tilt>0.0</tilt>
+				<roll>0.0</roll>
+			</orientation>
+        </Balloon>
+        <styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>
+	
+	<!-- KML document description -->
+	<name>Poring AR Engine</name>
+	<Snippet>Prototype of Poring AR Engine</Snippet>
+	<description>Prototype of Poring AR Engine</description>        	
+</Document>
+</kml>

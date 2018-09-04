@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+  <Placemark id="placemark_point">
+    <name>Placemark Point</name>
+    <description>Example placemark</description> <!-- data to be displayed in a default balloon -->
+    <Point>
+      <coordinates>24.825915,60.211899,0</coordinates> <!-- (~0.5 km) north northeast of Centennial Park -->
+    </Point>
+  </Placemark>
+  
+  <!-- KML document description -->
+  <name>PlacemarkPoint.kml</name>
+  <Snippet>Example of creating a simple placemark and description balloon</Snippet>
+  <description><![CDATA[
+    <div><p><b>Example of creating a simple placemark and description balloon</b></p>
+    <p>
+    <b>notes:</b>
+    <ul>
+    <li> the Placemark element with Point coordinates creates a name label and icon
+    <li> the name and icon use relative scaling to keep distance objects readable
+    <li> the name, icon and description balloon are oriented towards the device
+    <li> the behavior of this element is consistent with the KML specification
+    <li> this example is located to the north northeast of Centenial Park, Atlanta
+    <ul>
+    <li> use the GeoSpot or GeoSpotPanorama example to override the KAMRA browser GPS
+    </ul>
+    <li> clicking on the placemark name or KAMRA icon reveals the balloon description
+    <li> clicking on the balloon description brings it up to the screen
+    </ul>
+    ]]>
+  </description>          
+</Document>
+</kml>

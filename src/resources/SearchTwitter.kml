@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document id="doc">
+	
+	<Style id="overlayStyle"> <!-- style for ScreenOverlay -->
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode>
+		</BalloonStyle>
+	</Style>
+	
+	<Style id="twitterStyle"> <!-- style for placemarkers -->
+		<IconStyle>
+			<scale>1.0</scale>
+			<Icon>
+				<href>http://twitter-badges.s3.amazonaws.com/t_logo-a.png</href> <!-- url to twitter logo -->
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction" />
+		</IconStyle>
+	</Style>
+	
+	
+	<ScreenOverlay>
+		<name>myOverlay</name>
+			<description><![CDATA[
+        
+			<script type="text/javascript">
+			
+				function removePlacemarkers() //called in between searches to clear out old placemarkers before new ones are added
+				{
+					for (kmlObjId in KHARMA.dom.elements)
+					{
+						var kmlObj = KHARMA.dom.elements[kmlObjId];
+						var feature = document.getElementById(kmlObj.id);
+						if (feature && kmlObjId.substring(0,2) == 'PM') //only removes objects with the substring "PM" at the beginning of their id (short for "PlaceMarker").  without this extra condition, this function would remove everything in the scene, including the UI
+						{
+							$(feature).remove();
+							KHARMA.dom.removeElementWithID(kmlObj.id);
+						}
+					}
+				}
+
+
+
+				function twitterSearch() //called when submit button is pressed
+				{	
+					removePlacemarkers(); //clear out old placemarkers (if any)
+					
+					var search_term = document.getElementById("search").value;
+					var results = "30";
+					var radius = "5km";
+					
+					var myLoc = KHARMA.getLocation();																		
+					var myLat = myLoc.latitude;
+					var myLon = myLoc.longitude;
+
+					//build the URL that requests data from twitter.com
+					var url='http://search.twitter.com/search.json?callback=?&rpp=' + results + '&geocode=' + myLat + '%2C' + myLon + '%2C' + radius + '&q=' + search_term;
+					
+					document.getElementById("submitBtn").value = "Searching...";
+					
+					$.getJSON(url,function(json) //get JSON data from twitter.com
+					{
+						$.each(json.results,function(i,tweet)
+						{
+							if(tweet.geo != null) //only use tweets that include geo data
+							{
+								var pmLat = tweet.geo.coordinates[0];
+								var pmLon = tweet.geo.coordinates[1];
+								
+								//use the twitter JSON to construct a new placemark JSON object
+								var myPlacemarkJSON =	
+								{   
+									description : "<img src=" + tweet.profile_image_url + " width='48' height='48'/> <br><br>" + tweet.text,
+									iconVisibility : "1",
+									id : "PM" + i,
+									labelVisibility : "1",
+									name : tweet.from_user,
+									type : "placemark",
+									visibility : "1",
+									balloonVisibility : "0",
+									geometry :      [{ 
+													 id : "GEO" + i,
+													 latitude : pmLat,
+													 longitude : pmLon,
+													 altitude : "0",
+													 type : "point" 
+													 }],
+									styleUrl : "#twitterStyle"
+								};
+								var myPlacemark = new KMLPlacemark(myPlacemarkJSON);
+							}
+						});
+						renderKMLObjects();
+						document.getElementById("submitBtn").value = "Submit";
+					});
+				}
+
+			</script> 
+			
+			<style type="text/css">
+				div.mystyle
+				{
+					width:						320px;
+					height:						30px;
+					left:						-160px;
+					top:						-56px;
+					font-family:				sans-serif;
+					font-size:					12px;
+			
+					background-color:			rgba(0, 0, 0, 0.5);
+					border-width:				2px;
+					border-color:				rgba(255, 255, 255, 1.0);
+				
+					color:						rgba(255, 255, 255, 1);
+					vertical-align:				top;
+					text-align:					left;
+					position: absolute;
+				}
+				
+				.smallBtnStyle
+				{
+					font-family:				sans-serif;
+					font-size:					8px;
+					color:						rgb(0, 0, 0);
+					vertical-align:				top;
+					text-align:					center;
+				}
+			</style>
+			
+	
+			<div id="searchDiv" class="mystyle">
+				<form name="input" action="javascript:twitterSearch();" method="get">
+					Twitter Search:
+					<input id="search" value="" type="text" name="keyword"/>
+					<input id="submitBtn" class="smallBtnStyle" type="submit" value="Submit"/>	
+					<br>
+				</form>
+			</div>
+			
+			
+		
+		]]></description>
+			
+		<overlayXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/> 
+		<screenXY x="0.5" y="0.9" xunits="fraction" yunits="fraction"/>
+		<size x="0" y="0" xunits="pixels" yunits="pixels"/>
+		
+		<styleUrl>#overlayStyle</styleUrl>
+	</ScreenOverlay>
+	
+	<!-- KML document description -->
+	<name>SearchTwitter.kml</name>
+	<Snippet>Example Twitter Search for Argon</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example Twitter Search for Argon</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li>searches for geo-tagged tweets within 5km of user location
+		<li>displays tweets as icons in the AR browser viewing space
+		<li>click on icons to view entire tweets
+		<li>makes use of javascript functions embedded within the KML to query twitter.com
+		<li>javascript functions use JQuery to retrieve JSON data from twitter.com
+		<li>twitter JSON data is then used to create new KML placemarks
+		</ul>
+		]]>
+	</description>   
+</Document>
+</kml>

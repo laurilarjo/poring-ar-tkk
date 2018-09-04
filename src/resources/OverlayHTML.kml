@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Style id="undecorated_style">
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode>	<!-- kml:displayModeEnum -->
+		</BalloonStyle>
+	</Style>
+	 
+	<ScreenOverlay>
+		<name>Overlay HTML</name>
+		<description><![CDATA[
+        
+            <script type="text/javascript">
+
+            var exampleNumber = 0;
+            var exampleURL = Array();
+            exampleURL[0] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/BalloonRelative.kml";
+            exampleURL[1] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/BalloonOrientation.kml";
+            exampleURL[2] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/BalloonVisibility.kml";
+            exampleURL[3] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/BalloonBillboard.kml";
+            exampleURL[4] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/ScaleRelative.kml";
+            exampleURL[5] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/DescriptionUnstyled.kml";
+            exampleURL[6] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/DescriptionCSS.kml";
+            exampleURL[7] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/DescriptionJavaScript.kml";
+            exampleURL[8] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/GeoSpot.kml";
+            exampleURL[9] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/GeoSpotPanorama.kml";
+            exampleURL[10] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/PlacemarkPoint.kml";
+            exampleURL[11] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/SoundStatic.kml";
+            exampleURL[12] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/BalloonLabel.kml";
+            exampleURL[13] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/GeoSpotFolder.kml";
+            exampleURL[14] = "https://research.cc.gatech.edu/polaris/sites/edu.polaris/files/OverlayImage.kml";
+            
+            function loadNextExample() {
+                if (exampleNumber < exampleURL.length)
+                {
+                    document.location = exampleURL[exampleNumber];              
+                    console.log("loading example:" + exampleURL[exampleNumber]);
+                    exampleNumber++;
+                }
+                else
+                {
+                    console.log("all examples loaded");
+                }
+            }
+            
+            </script>
+            
+            <style type="text/css">
+                div.overlaystyle
+                {
+                    width: 320px;
+                    height: 50px;
+                    left: -160px;
+                    top: 0px;
+                    font-family: sans-serif;
+                    font-size: 14px;
+            
+                    background-color: rgba(0, 0, 0, 0.5);
+                    border-width: 2px;
+                    border-color: rgba(255, 255, 255, 1.0);
+                
+                    color: rgba(255, 255, 255, 1);
+                    vertical-align: top;
+                    text-align: left;
+                    position: absolute;
+                }
+            </style>
+            <div class="overlaystyle">
+            <form name="input" action="javascript:loadNextExample();" method="get">
+            <div>Overlay HTML</div>
+            <input type="submit" value="Load"/>
+            </form>
+            </div>]]>
+		</description>
+		<screenXY x="0.5" y="0.9" xunits="fraction" yunits="fraction"/>
+		<styleUrl>#undecorated_style</styleUrl>
+	</ScreenOverlay>
+
+	<!-- KML document description -->
+	<name>OverlayHTML.kml</name>
+	<Snippet>Example of placing a ScreenOverlay HTML on the screen</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of placing a ScreenOverlay HTML on the screen</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> the KARML extension allows the display of HTML content in screen overlays
+		<li> the KARML extension adds "unstyled" to the displayMode element
+		<li> setting styleUrl to an unstyled BalloonStyle overrides the Icon image
+		<li> each click of the button loads one of the basic examples in a channel
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

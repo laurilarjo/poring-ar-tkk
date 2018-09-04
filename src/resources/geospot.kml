@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+  <Placemark>
+    <name>GeoSpot</name>
+    <description>a surveyed GeoSpot (likely includes how to find the physical location)</description>
+    <Camera> <!-- camera element indicates that feature is a GeoSpot -->
+      <longitude>24.825915</longitude> <!-- location to set browser GPS coordinates -->
+      <latitude>60.211899</latitude>
+      <altitude>0</altitude>
+      <TimeStamp> <!-- applicable time (likely when GeoSpot was surveyed) -->
+        <when>1997-07-16T10:30:15+03:00</when>
+      </TimeStamp>
+      <Icon>
+        <href>http://geospot.imtc.gatech.edu/image/03_12_2010_02_35_08_7408_icon.png</href>  <!-- an image indicating exactly where to stand -->
+      </Icon>
+    </Camera>
+    <Point> <!-- location displayed on map or within browser view -->
+      <coordinates>24.825915,60.211899,</coordinates>
+    </Point>
+  </Placemark>
+
+  <!-- KML document description -->
+  <name>GeoSpot.kml</name>
+  <Snippet>Example of a Placemark that establishes a GeoSpot</Snippet>
+  <description><![CDATA[
+    <div><p><b>Example of a Placemark that establishes a GeoSpot</b></p>
+    <p>
+    <b>notes:</b>
+    <ul>
+    <li> a GeoSpot is a surveyed location the user indicates they are at
+    <li> they can be used to improve accuracy or for virtual tourism
+    <li> the KARML extension adds an Icon element to the Camera element
+    <ul>
+    <li> the latitude, longitude and altitude elements define the GeoSpot
+    <li> the Icon element provides an image of the surveyed location
+    </ul>
+    <li> the description and Camera icon should be used to direct the user
+    <ul>
+    <li> the KAMRA browser displays each GeoSpot placemark on the map
+    <li> click the pin to display the description and icon in a detail
+    <li> click the "go there" button within the detail to override GPS
+    <li> click "exit" button within camera view to return to live GPS
+    </ul>
+    </ul>
+    ]]>
+  </description>          
+</Document>
+</kml>

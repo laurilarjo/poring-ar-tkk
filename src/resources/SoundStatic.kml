@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+   
+	<Placemark id="sound_static">
+		<name>Sound Static</name>
+		<description><![CDATA[
+		<script language="text/javascript">
+		function sound_static_init()
+		{
+			setTimeout(function(){pauseSound('intro_sound')}, 20000);
+			setTimeout(function(){playSound('intro_sound')}, 30000);
+			setTimeout(function(){rewindSound('intro_sound')}, 40000);
+			setTimeout(function(){stopSound('intro_sound')}, 50000);
+			console.log("sound_static initialized");
+		}
+		function playSound(soundId)
+		{
+			var mySound = KHARMA.getKMLElementById(soundId);
+			if (mySound)
+			{
+				mySound.play();
+				console.log("playing " + soundId);
+			}
+		}
+		function pauseSound(soundId)
+		{
+			var mySound = KHARMA.getKMLElementById(soundId);
+			if (mySound)
+			{
+				mySound.pause();
+				console.log("pausing " + soundId);
+			}
+		}
+		function rewindSound(soundId)
+		{
+			var mySound = KHARMA.getKMLElementById(soundId);
+			if (mySound)
+			{
+				mySound.rewind();
+				console.log("rewinding " + soundId);
+			}
+		}
+		function stopSound(soundId)
+		{
+			var mySound = KHARMA.getKMLElementById(soundId);
+			if (mySound)
+			{
+				mySound.stop();
+				console.log("stopping " + soundId);
+			}
+		}
+		</script>
+		]]>
+        </description>
+		<visibility>0</visibility>
+		<Sound id="intro_sound"> <!-- sounds can be positioned and oriented -->
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">6.0</latitude>
+				<longitude>0.0</longitude>
+				<altitude>0.0</altitude>
+			</location>
+			<gain>1</gain>
+			<looping>0</looping> <!-- 0=false,1=true -->
+			<sourceState>playing</sourceState> <!-- state can be triggered by URL using ;playing, ;stopped and ;resuming -->
+			<sourceType>static</sourceType> <!-- undertermined, static, streaming -->
+			<link>
+				<href>http://www.alexshill.com/files/intro.mp3</href>
+			</link>
+		</Sound>
+	</Placemark>
+	
+	<!-- KML document description -->
+	<name>SoundStatic.kml</name>
+	<Snippet>Example of how to create sound elements and manipulate with JavaScript</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of how to create sound elements and manipulate with JavaScript</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> sounds are not currently spatialized or directionalized so their location is not relevant
+		<li> the sourceState element determines the state of the sound at startup:
+		<ul>
+		<li> valid values are "stopped", "playing" and "paused"
+		</ul>
+		<li> sourceType indicates if the sound is a downloaded ("static") or streamed
+		<li> the gain element is used to adjust the gain relative to other sounds
+		<li> eventually Region elements will provide JavaScript events which can be used to trigger sounds
+		<li> the JavaScript defined here demonstrates using the public KHARMA API to trigger sounds 
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

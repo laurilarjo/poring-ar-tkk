@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Style id="undecorated_style">
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode> <!-- no styling applied to balloon -->
+		</BalloonStyle>
+	</Style>
+	
+	<Placemark>
+		<name>Unstyled Placemark Example</name>
+		<snippet>working example for vta demo of an item label</snippet>
+		<description><![CDATA[ <style type="text/css">						.indicatort		{			position:					absolute;			left:						0px;			width:						35px;			height:						35px;						padding:					6px 2px 4px 8px;			margin:                     5px 20px 7px 0px;						background-color:			rgba(255, 255, 255, 0.8); -webkit-border-radius: 10px; -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6)				}	.icon_sm_presence_l		{position: absolute; left:						228px;top: 1px; width: 24px;			height:						24px; padding: 5px; margin:                     5px 20px 7px 0px; 					}					.labelt		{			position:					absolute;			left:						50px;			top:5px;height:						35px;			width:						260px;			padding:5px;font-family:				Helvetica,sans-serif;			font-size:					10px;letter-spacing:0.1em;			text-align:					left;		background-color:			rgba(255, 255, 255, 0.8);					color:						rgb(0,0,0);	-webkit-border-radius: 10px; -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6)				}	.tweeticon{border:2px solid white;}.tweettext{flow:right;margin-left:7px;position:absolute;top:15px;}			</style>					<div class="indicatort"><img src="http://www.artsdigital.com/ar_browser/images/twitterb.png"/></div>			<span class="labelt"><img src="http://www.artsdigital.com/ar_browser/images/tweet_icon1.jpg" class="tweeticon"><span class="tweettext">t8inew</span><span class="icon_sm_presence_l"><img src="http://www.artsdigital.com/ar_browser/images/presence_invis.png"/></span></span>		 		
+        ]]>
+		
+		
+		</description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-6.0</latitude> <!-- southwest of the user -->
+				<longitude units="meters">-6.0</longitude> <!-- southwest of the user -->
+				<altitude>0.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+		<styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>
+	
+		<Placemark>
+		<name>Unstyled Placemark Example</name>
+		<snippet>working example for vta demo of an item label</snippet>
+		<description><![CDATA[ <style type="text/css">						.indicatort		{			position:					absolute;			left:						0px;			width:						35px;			height:						35px;						padding:					6px 2px 4px 8px;			margin:                     5px 20px 7px 0px;						background-color:			rgba(255, 255, 255, 0.8); -webkit-border-radius: 10px; -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6)				}						 .icon_sm_presence_l		{position: absolute; left:						228px;top: 1px; width: 24px;			height:						24px; padding: 5px; margin:                     5px 20px 7px 0px; 					} .labelt		{			position:					absolute;			left:						50px;			top:5px;height:						35px;			width:						260px;			padding:5px;font-family:				Helvetica,sans-serif;			font-size:					10px;letter-spacing:0.1em;			text-align:					left;		background-color:			rgba(255, 255, 255, 0.8);					color:						rgb(0,0,0); -webkit-border-radius: 10px; -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6)			}	.tweeticon{border:2px solid white;}.tweettext{flow:right;margin-left:7px;position:absolute;top:15px;}			</style>					<div class="indicatort"><img src="http://www.artsdigital.com/ar_browser/images/twitterb.png"/></div>			<span class="labelt"><img src="http://www.artsdigital.com/ar_browser/images/tweet_icon2.jpg" class="tweeticon"><span class="tweettext">davidvasser</span><span class="icon_sm_presence_l"><img src="http://www.artsdigital.com/ar_browser/images/presence_busy.png"/></span></span>		
+        ]]>
+		
+		
+		</description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-10.0</latitude> <!-- southwest of the user -->
+				<longitude units="meters">-9.0</longitude> <!-- southwest of the user -->
+				<altitude>4.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+		<styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>
+	 
+	 <Placemark>
+		<name>Unstyled Placemark Example</name>
+		<snippet>working example for vta demo of an item label</snippet>
+		<description><![CDATA[ <style type="text/css">						.indicator_ts		{			position:					absolute;			left:						280px;			width:						35px;			height:						35px;						padding:					5px;			margin:                     5px 20px 7px 0px;						background-color:			rgba(255, 255, 255, 0.8); -webkit-border-radius: 10px; -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6)				} .icon_sm_presence_r		{position: absolute; left:						5px;top: 1px; width: 24px;			height:						24px; padding: 5px; margin:                     5px 20px 7px 0px; 					} .label_ts		{			position:					absolute;			left:						0px;			top:5px;height:						35px;			width:						260px;				padding:					5px 5px 5px 10px;			font-family:				Helvetica,sans-serif;			font-size:					10px;letter-spacing:0.1em;			text-align:					right;			background-color:			rgba(255, 255, 255, 0.8);					color:						rgb(0,0,0); -webkit-border-radius: 10px; -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6)				}.tweeticon{border:2px solid white;}.tweettext_ts{flow:left;margin-right:7px;position:absolute;top:15px;right:35px;}			</style>					<div class="indicator_ts"><img src="http://www.artsdigital.com/ar_browser/images/twitterb.png"/></div>			<span class="label_ts"><img src="http://www.artsdigital.com/ar_browser/images/tweet_icon2.jpg" class="tweeticon"><span class="tweettext_ts">davidvasser</span><span class="icon_sm_presence_r"><img src="http://www.artsdigital.com/ar_browser/images/presence_busy.png"/></span></span>		
+        ]]>
+		
+		
+		</description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-4.0</latitude> <!-- southwest of the user -->
+				<longitude units="meters">-3.0</longitude> <!-- southwest of the user -->
+				<altitude>-1.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+		<styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>
+	
+	
+	 <Placemark>
+		<name>Unstyled Placemark Example</name>
+		<snippet>working example for vta demo of an item label</snippet>
+		<description><![CDATA[ <style type="text/css">						.indicator_ts		{			position:					absolute;			left:						280px;			width:						35px;			height:						35px;						padding:					5px;			margin:                     5px 20px 7px 0px;						background-color:			rgba(255, 255, 255, 0.8); -webkit-border-radius: 10px; -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6)				} .icon_sm_presence_r		{position: absolute; left:						5px;top: 1px; width: 24px;			height:						24px; padding: 5px; margin:                     5px 20px 7px 0px; 					} .label_ts		{			position:					absolute;			left:						0px;			top:5px;height:						35px;			width:						260px;				padding:					5px 5px 5px 10px;			font-family:				Helvetica,sans-serif;			font-size:					10px;letter-spacing:0.1em;			text-align:					right;			background-color:			rgba(255, 255, 255, 0.8);					color:						rgb(0,0,0); -webkit-border-radius: 10px; -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6)				} .tweeticonp{border:2px solid rgb(0,80,125);} .tweettext_ts{flow:left;margin-right:7px;position:absolute;top:15px;right:35px;}			</style>					<div class="indicator_ts"><img src="http://www.artsdigital.com/ar_browser/images/twitterb.png"/></div>			<span class="label_ts"><img src="http://www.artsdigital.com/ar_browser/images/tweet_icon3.jpg" class="tweeticonp"><span class="tweettext_ts">melanie2718</span><span class="icon_sm_presence_r"><img src="http://www.artsdigital.com/ar_browser/images/presence_online.png"/></span></span>		
+        ]]>
+		
+		
+		</description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-5.0</latitude> <!-- southwest of the user -->
+				<longitude units="meters">-3.0</longitude> <!-- southwest of the user -->
+				<altitude>1.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+		<styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>
+	 
+	<!-- KML document description -->
+	<name>DescriptionUnstyled.kml</name>
+	<Snippet>Example of a placemark balloon description with no styling</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of a placemark balloon description with no styling</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> the KARML extension adds "unstyled" to the displayMode element
+		<li> default balloon description styling is application specific
+		<li> setting styleUrl to an unstyled BalloonStyle overrides the default 
+		<ul>
+		<li> the BalloonStyle element can also adjust default style colors
+		</ul>
+		<li> an unstyled description is white text against a transparent background
+		<ul>
+		<li> analogous to how unstyled HTML text is black against white
+		</ul>
+		<li> the placemark description balloon should appear to the southwest of the user 
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

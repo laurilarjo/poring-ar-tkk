@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Placemark id="balloon_orientation">
+		<name>Balloon Orientation</name>
+		<description>Example placemark with fixed orientation</description>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude>0.00006656</latitude> <!-- 6 m north @ 35deg lat -->
+				<longitude>0.00005477</longitude> <!-- 6 m east @ 35deg lat -->
+				<altitude>0.0</altitude>
+			</location>
+			<orientation>
+				<heading>-45.0</heading> <!-- facing southwest -->
+				<tilt>0.0</tilt> <!-- tilted into vertical -->
+				<roll>0.0</roll>
+			</orientation>
+		</Balloon>
+	</Placemark>
+	
+	<!-- KML document description -->
+	<name>BalloonOrientation.kml</name>
+	<Snippet>Example of specifying placemark description balloon orientation</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of specifying placemark description balloon orientation</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> the KARML Balloon element can specify the orientation of the description balloon
+		<li> the orientation of the description balloon does not affect the name and its icon
+		<ul>
+		<li> use the KARML Label element to adjust the orientation of the label
+		</ul>
+		<li> the placemark name and KAMRA icon should appear to the northwest of the user
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Style id="undecorated_style">
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode> <!-- no styling applied to balloon -->
+		</BalloonStyle>
+	</Style>
+	
+	<Placemark>
+		<name>Unstyled Placemark Example</name>
+		<description>Example balloon with unstyled description</description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-6.0</latitude> <!-- southwest of the user -->
+				<longitude units="meters">-6.0</longitude> <!-- southwest of the user -->
+				<altitude>0.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+		<styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>
+	 
+	<!-- KML document description -->
+	<name>DescriptionUnstyled.kml</name>
+	<Snippet>Example of a placemark balloon description with no styling</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of a placemark balloon description with no styling</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> the KARML extension adds "unstyled" to the displayMode element
+		<li> default balloon description styling is application specific
+		<li> setting styleUrl to an unstyled BalloonStyle overrides the default 
+		<ul>
+		<li> the BalloonStyle element can also adjust default style colors
+		</ul>
+		<li> an unstyled description is white text against a transparent background
+		<ul>
+		<li> analogous to how unstyled HTML text is black against white
+		</ul>
+		<li> the placemark description balloon should appear to the southwest of the user 
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

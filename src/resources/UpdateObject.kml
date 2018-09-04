@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Placemark id="description_javascript">
+		<name>Update Object</name>
+        <description><![CDATA[
+        <script language="text/javascript">
+		var state = false;
+        function myFunction() {
+			var myJSON = {
+                         id : "balloon_location",
+                         prop : { latitude: "5.0", altitude: "1.0" }
+						 };
+            KHARMA.updateKMLObject(myJSON,true);
+			console.log("set balloon location");
+            setTimeout(function(){KHARMA.updateKMLObject({id:"balloon_location",prop:{latitude:"6.0",altitude:"0.0"}},true);}, 10000);
+        }
+
+        function description_javascript_init() {
+            $('#javascripttest_div').bind('click',function(event) {event.stopPropagation(); myFunction();});
+            console.log('description_javascript initialized');
+        }
+        </script>
+        <div id="javascripttest_div">Click here to toggle location</div>
+        ]]>
+        </description>        
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location id="balloon_location">
+				<latitude units="meters">6.0</latitude> <!-- northwest of the user -->
+				<longitude units="meters">-6.0</longitude> <!-- northwest of the user -->
+				<altitude>0.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+	</Placemark>    
+
+	<!-- KML document description -->
+	<name>UpdateObjects.kml</name>
+	<Snippet>Example of updating KML DOM element properties using JSON</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of updating KML DOM element properties using JSON</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> The client API can update KML elements by parsing JSON with <em>id</em> and <em>prop</em> attributes
+		<li> the <em>prop</em> attribute can update multiple properties
+		<li> clicking on the balloon text temporarily sets changes the balloon location
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

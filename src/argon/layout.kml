@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+    <Document id="gt_rnoc_channel_server_doc">
+        <name>GT-RNOC Channel Server Network Link</name>
+        <Snippet maxLines="2">Location and context based content from Twitter, Flickr and NextBus</Snippet>
+
+        <Style id="undecorated_style">
+            <BalloonStyle>
+                <displayMode>undecorated</displayMode> <!-- no styling applied to balloon -->
+            </BalloonStyle>
+        </Style>
+    
+        <Placemark>
+            <name />
+            <description><![CDATA[
+            
+            <style>
+
+.header-wrapper {
+	float: left;
+	width: 30%;
+	height: 100px;
+}
+.statusbar-wrapper {
+	float: left;
+	width: 60%;
+	height: 100px;
+}
+
+ul { list-style: none; margin: 0px; padding: 0px; }
+li { line-height: 1em; font-size: 60%;  padding-left: 10px; }
+
+#sword-div { float: left; padding-left: 70px;}
+#heal-div { float: left; }
+#mana-div { float: left; }
+#playerlevel { float: right; }
+
+.icon { padding: 5px 20px 10px 20px; }
+.icon-img { height: 36px; width: 36px; }
+
+img.percentImage {
+ background: white url(../images/percentimageback.png) top left no-repeat;
+ padding: 0;
+ margin: 5px 0 0 0;
+ background-position: 1px 0;
+}
+
+
+#bottombar	{ width: 330px; height: 50px; left: -165px; top:0px;
+			background-color: rgba(15, 15, 15, 0.8); color: rgba(0, 0, 0, 1);
+			vertical-align: bottom; text-align: left; position: absolute;
+			}
+			
+#topbar	{ width: 330px; height: 50px; left: -165px; top:0px;
+			background-color: rgba(255, 255, 255, 0.8); color: rgba(0, 0, 0, 1);
+			vertical-align: bottom; text-align: left; position: absolute;
+			}
+						
+						
+</style>
+<script type="text/javascript">
+
+var UI = {
+	HP : { 
+		amount : 100, //read-only
+		div : '#hp-bar', //private, don't touch
+		
+		add : function(amount) {
+			UI.add(this, amount);
+		},
+		remove : function(amount) {
+			UI.remove(this, amount);
+		}
+	},
+	Mana : { 
+		amount : 100, //read-only
+		div : '#mana-bar', //private, don't touch
+		
+		add : function(amount) {
+			UI.add(this, amount);
+		},
+		remove : function(amount) {
+			UI.remove(this, amount);
+		}
+	},
+	
+	add : function(target, amount) {
+		target.amount += amount;		
+		var newAmount = target.amount * 1.2 - 120;
+		newAmount = newAmount + "px 0";		
+		if (target.amount >= 100)	{
+			target.amount = 100;
+			$(target.div).css("background-position", "1px 0");
+		}
+		else {
+			$(target.div).css("background-position", newAmount);
+		}
+	},
+	
+	remove : function(target, amount) {
+		target.amount -= amount;
+		var newAmount = target.amount * 1.2 - 120;
+		newAmount = newAmount + "px 0";		
+		if (target.amount <= 0)	{
+			target.amount = 0;
+			$(target.div).css("background-position", "-120px 0");
+		}
+		else {
+			$(target.div).css("background-position", newAmount);
+		}
+	},
+	
+};
+
+</script>
+
+            ]]></description>
+            <styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+            <visibility>0</visibility>
+            <Point>
+                <coordinates>-84.390122,33.774877,0</coordinates> <!-- (~0.5 km) north northeast of Centennial Park -->
+            </Point>
+        </Placemark>
+        
+        <ScreenOverlay>
+		<name>Top bar</name>
+		<description><![CDATA[
+		<div id="topbar">
+
+		<div class="header-wrapper">
+			
+			<ul>
+				<li id="playername">Fraktile</li>
+				<li>Level <div id="playerlevel">9</div></li>
+			</ul>			
+			
+		</div>
+		
+		<div class="statusbar-wrapper">
+			<ul>
+				<li>HP <img id="hp-bar" src="../images/percentimage.png" 
+				    alt="9.5%" 
+				    class="percentImage"  />
+				</li>
+				<li>Mana <img id="mana-bar" src="../images/percentimage.png" 
+				    alt="9.5%" 
+				    class="percentImage"  />
+				 </li>
+			</ul>
+		
+		</div>
+		</div>			
+		]]>
+		</description>
+		<screenXY x="0.5" y="1.03" xunits="fraction" yunits="fraction"/>
+		<styleUrl>#undecorated_style</styleUrl>
+	</ScreenOverlay>
+	
+    <ScreenOverlay>
+		<name>Bottom bar</name>
+		<description><![CDATA[
+        
+			<div id="bottombar">
+				<div id="sword-div" class="icon">
+				<img class="icon-img" src="../images/sword.jpg"/></div>
+				<div id="heal-div" class="icon">
+				<img class="icon-img" src="../images/heal.png"/></div>
+				<div id="mana-div" class="icon">
+				<img class="icon-img" src="../images/manapot.jpg"/></div>
+			</div>]]>
+		</description>
+		<screenXY x="0.5" y="0.22" xunits="fraction" yunits="fraction"/>
+		<styleUrl>#undecorated_style</styleUrl>
+	</ScreenOverlay>
+        
+
+    </Document>
+</kml>

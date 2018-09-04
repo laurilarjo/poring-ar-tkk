@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Placemark>
+		<name>Balloon Label</name>
+		<description>Example balloon with label</description>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-6.0</latitude> <!-- southeast of the user -->
+				<longitude units="meters">6.0</longitude> <!-- southeast of the user -->
+				<altitude>1.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode> <!-- default, relative, billboard -->
+		</Balloon>
+		<Label>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-6.0</latitude> <!-- southeast of the user -->
+				<longitude units="meters">6.0</longitude> <!-- southeast of the user -->
+				<altitude>1.0</altitude>
+			</location>
+			<orientation>
+				<heading>-135.0</heading>
+				<tilt>0.0</tilt>
+				<roll>20.0</roll>
+			</orientation>
+		</Label>
+	</Placemark>
+	
+	<!-- KML document description -->
+	<name>BalloonLabel.kml</name>
+	<Snippet>Example of specifying placemark label location and orientation</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of specifying placemark label location and orientation</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> the KARML Label element can specify the positioning of the name label
+		<li> the Label element overrides any other settings for the placmark label
+		<li> the placemark name and icon should appear with -135.00 degrees roll
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

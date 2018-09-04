@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Style id="undecorated_style"> 
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode> <!-- no styling applied to balloon -->
+		</BalloonStyle>
+	</Style>
+	 
+	<Placemark>
+		<name>Description CSS</name>
+		<snippet>Example of setting balloon styling with CSS styles</snippet>
+        <description><![CDATA[
+
+		<style type="text/css">
+		div.mystyle
+		{
+			position:					absolute;
+			width:						200px;
+			height:						200px;
+			left:						-100px;
+			top:						-100px;
+
+			vertical-align:				bottom;
+			font-family:				sans-serif;
+			font-size:					10px;
+			text-align:					center;
+
+			background-color:			rgba(0, 0, 255, 0.5);
+			border-style:				solid;
+			border-width:				5px;
+			border-color:				rgb(0, 255, 0);			
+			color:						rgb(255, 0, 0);
+			
+			-webkit-border-radius:		40px;
+		}
+		</style>
+		
+		<div class="mystyle"><div style="position:absolute; top:50%;">Example using CSS styles</div></div>
+        ]]>
+        </description>        
+		<balloonVisibility>1</balloonVisibility> <!-- make balloon visible -->
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude>0.0</latitude>
+				<longitude units="meters">-6.0</longitude> <!-- west of the user -->
+				<altitude>0.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+		<styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>  
+	  
+	<!-- KML document description -->
+	<name>DescriptionCSS.kml</name>
+	<Snippet>Example of a placemark balloon description with CSS styling</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of a placemark balloon description with CSS styling</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> CSS can be used to set the description balloon styling
+		<li> setting displayMode to "unstyled" removes any default styling
+		<li> the styling should move content up and left for proper centering
+		<ul>
+		<li> default HTML styling flows to the right and down from the origin
+		<li> use CSS "left" and "top" attributes to shift "absolute" positioned elements
+		<li> child elements of absolute positioned elements do not respect "vertical-align"
+		<li> use the "top" attribute on a child element to set vertical alignment
+		</ul>
+		<li> all CSS in each channel shares the same namespace
+		<li> the placemark description balloon should appear to the west of the user 
+		</ul>
+		]]>
+	</description>        	
+</Document>        
+</kml>

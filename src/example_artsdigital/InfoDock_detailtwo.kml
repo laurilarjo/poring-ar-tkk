@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Style id="undecorated_style">
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode>	<!-- kml:displayModeEnum -->
+		</BalloonStyle>
+	</Style>
+	 
+	<ScreenOverlay>
+		<name>Overlay HTML</name>
+		<description><![CDATA[
+        
+			<style type="text/css">				.infoarea_statethree				{					width:						330px;					height:						35px;					left:						-165px;					top:						42px;													background-color:			rgba(255, 255, 255, 0.8);									color:						rgba(0, 0, 0, 1);					vertical-align:				bottom;					text-align:					left;					position: 					absolute;				}.tweettext				{font-family:				Helvetica, sans-serif;					font-size:					5px;letter-spacing:0.1em;															color:						rgba(0, 0, 0, 1);										text-align:					left;position:absolute;left:35px;top:5px;width:330px;float:right;}				.tintblue {color:navy;font-size:16px;padding:3px;} .twitterthumbnail{margin: 5px 5px 0px 5px;}</style>			<div class="infoarea_statethree"><img src="http://www.artsdigital.com/ar_browser/images/twitter.png"/class="twitterthumbnail"><span class="tweettext">630R610 Had fun @ Georgia Tech today. Sat in the Presidents Box. Talk to the president of Ga Tech, the</span></div>]]>
+		</description>
+		<screenXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+		<styleUrl>#undecorated_style</styleUrl>
+	</ScreenOverlay>
+
+	<!-- KML document description -->
+	<name>OverlayHTML.kml</name>
+	<Snippet>Example of placing a ScreenOverlay HTML on the screen</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of placing a ScreenOverlay HTML on the screen</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> the KARML extension allows the display of HTML content in screen overlays
+		<li> the KARML extension adds "unstyled" to the displayMode element
+		<li> setting styleUrl to an unstyled BalloonStyle overrides the Icon image
+		<li> each click of the button loads one of the basic examples in a channel
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

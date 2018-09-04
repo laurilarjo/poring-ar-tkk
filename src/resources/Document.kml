@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="kmldocument">
+
+	<name>Document.kml</name>
+	<Snippet>Example showing how to place KML documentation into the document element</Snippet>
+	<description><![CDATA[
+		<div><p><b>This is the description HTML of the document element in this KML file</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> this HTML is shown in the browser when the info button is pressed
+		<li> it can also be accessed from the channel management dialog
+		<li> the content here should be formatted for the device screen (i.e. 340x420 for iPhone)
+		<li> the image below demonstrates adding an image to the document description
+		<li> browse to the following address or scan the image below to load all examples:
+		<ul>
+		<li> <a href="kamra://research.cc.gatech.edu/polaris/sites/edu.polaris/files/OverlayHTML.kml">OverlayHTML.kml</a>
+		</ul>
+		</ul>
+		</p>
+		<img height=280px; width=280px; src="http://www.alexshill.com/files/examples/OverlayHTML_DataMatrix.png"/>
+		]]>
+	</description>        
+
+</Document>
+</kml>

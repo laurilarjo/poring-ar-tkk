@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+    <Document id="gt_rnoc_channel_server_doc">
+        <name>GT-RNOC Channel Server Network Link</name>
+        <Snippet maxLines="2">Location and context based content from Twitter, Flickr and NextBus</Snippet>
+
+        <Style id="undecorated_style">
+            <BalloonStyle>
+                <displayMode>undecorated</displayMode> <!-- no styling applied to balloon -->
+            </BalloonStyle>
+        </Style>
+    
+        <Placemark>
+            <name />
+            <description><![CDATA[
+                <style>
+                    /*
+
+CSS settings for VTA app on Argon Browser
+
+9.30.10
+
+Fred Leighton
+fleighton3@gatech.edu
+
+this document contains css settings for the following files which are
+currently hosted at http://www.artsdigital.com/ar_browser/
+
+InfoDock.kml 
+
+this is the initial state of the Info Dock with the indication to touch the orange and white icons.
+To view this in context, the ItemLabel.kml should be loaded at the same time.
+
+
+InfoDock_detailone.kml
+
+this is the state of the Info Dock upon selecting an item in the view - in this example,
+youtube video and a flickr image gallery are shown with thumbnails and short descriptions. 
+To view this in context, the ItemLabelwIcons.kml should be loaded at the same time.
+
+* see ImageGallery.kml below (further detail screen for viewing images)
+
+
+
+InfoDock_detailtwo.kml
+
+this is the twitter ticker design - which should be loaded with InfoDock.kml and ItemLabel.kml
+or InfoDock_detailone.kml and ItemLabelwIcons.kml
+
+
+InfoDock_detailthree.kml
+
+this is the state of the Info Dock upon selecting a tweet in the view - in this example,
+the tweet icon, id, and text is shown. To view this in context, the ItemLabelTweet.kml should
+be loaded at the same time. 
+
+
+InfoDock_detailfour.kml
+
+this is the state of the Info Dock upon selecting to view the GT Tech Trolley second level of 
+information (selecting and holding the label/icon for this transportation in the AR view)
+the information includes the bus stops and information on the next bus from a selected stop.
+To view this in context, the BusRoute.kml should be loaded at the same time. 
+
+for the remaining four - they are mentioned above - most of the .kml files need to be loaded
+with another one - with both channels turned on to see how they should appear in this design.
+
+
+ItemLabel.kml
+
+
+ItemLabelwIcons.kml
+
+
+ItemLabelTweet.kml
+
+
+BusRoute.kml
+
+
+ImageGallery.kml
+
+this shows a design for the flickr image gallery which would come up
+when someone chooses the flickr image thumbnail from InfoDock_detailone.kml
+
+
+
+
+the settings are presented here in a more readable format for css (formatting with returns must be
+removed for .kml file)
+
+*/
+
+/* InfoDock.kml */
+
+#infoarea			{	width: 330px; height: 100px; left: -165px; top:85px;
+						background-color: rgba(255, 255, 255, 0.8); color: rgba(0, 0, 0, 1);
+						vertical-align: bottom; text-align: left; position: absolute;}
+						
+						
+.infoarea_text		{	font-family: Helvetica, sans-serif; font-size: 12px; 
+						letter-spacing:0.1em;
+						color: rgba(0, 0, 0, 1); vertical-align: top; text-align: left;
+						position:absolute;top:35px;}
+						
+
+
+
+/* InfoDock_detailone.kml */
+
+									
+#infoarea			{	width: 330px; height: 100px; left: -165px; top:85px;
+						background-color: rgba(255, 255, 255, 0.8); color: rgba(0, 0, 0, 1);
+						vertical-align: bottom; text-align: left; position: absolute;}
+			
+.infoareainstructions	{font-family: Helvetica, sans-serif;
+						font-size: 4px; letter-spacing:0.1em;
+						color: rgba(0, 0, 0, 1); vertical-align: top;
+						text-align: left; position: absolute; top: 77px;
+						left: 220px; width: 120px ;line-height: 110%;
+						padding:3px;}
+						
+
+
+.infomedia			{position: absolute; left:2px; font: Helvetica, sans-serif; 
+					font-size: 6px; letter-spacing: 0.1em; margin:0px 2px 6px 2px;} 
+					
+.thumbnailtext 		{font-family:Helvetica, sans-serif; font-size:6px; 
+					letter-spacing: 0.1em; position: absolute;
+					top: 11px; left: 125px; line-height: 110%; width:200px;
+					height:75px;overflow:hidden}
+					
+	
+.infothumbnail			{margin: 13px 5px; border: 2px solid navy; height:68px; 
+						width:108px;}
+
+
+
+
+/* InfoDock_detailthree.kml */
+
+#infoarea			{	width: 330px; height: 100px;
+						left: -165px; top: 85px;
+						background-color: rgba(255, 255, 255, 0.8);
+						color: rgba(0, 0, 0, 1); vertical-align: bottom;
+						text-align: left; position: absolute;}
+						
+.infoarea_textthree	{	font-family: Helvetica, sans-serif;				
+						font-size: 6px; letter-spacing:0.1em;
+						color: rgba(0, 0, 0, 1); vertical-align: top;	
+						text-align: left; position:absolute; top: 10px; 
+						left:-20px; width:100px; line-height:110%; 	}
+						
+.click				{	padding: 6px; font-weight: 700; 
+						width: 80px; height: 55px; position: absolute;
+						top: -8px; right: 12px; letter-spacing: .05em}
+			
+.clickicon 			{	padding:0px 0px 7px 0px;}
+
+.outerbox			{	position: absolute;left:260px;top:3px} 
+
+.moveimage			{	position: absolute; top: 45px;}
+
+#tweet_detail		{	position: absolute; left:10px; top:10px;
+						font:Helvetica, sans-serif; font-size: 6px; letter-spacing: 0.1em; width: 230px;padding:3px;}
+						
+.tweet_textdetail	{	font-family:Helvetica, sans-serif; font-size: 6px; 	
+						letter-spacing: 0.1em; position: absolute; top: 20px; 
+						right:20px; line-height: 115%; width:150px;}
+						
+.tweetid			{	font-family:Helvetica, sans-serif; font-size: 10px;
+						letter-spacing: 0.1em; position: absolute; top:-8px; 
+						right:30px; font-weight:700;}
+						
+.tweeticond			{	margin: 0px 15px 10px 5px;border:3px solid 
+						rgb(0,80,125);position:absolute; top:-5px; right:165px}
+
+
+
+/* InfoDock_detailfour.kml */
+
+		
+#infoarea			{	width: 330px; height: 100px; left: -165px; top: 85px;
+						background-color: rgba(255, 255, 255, 0.8); color: rgba(0, 0, 0, 1);
+						vertical-align: bottom; text-align: left; position: absolute;}
+						
+						
+#busone				{	font-family: Helvetica, sans-serif; font-size: 6px; 
+						letter-spacing:0.1em;
+						color: rgba(0, 0, 0, 1);  text-align: left;
+						position: absolute; top: -5px; left: -20px; width: 200px; height:25px;line-height:110%; margin:-10px;}
+						
+						
+#bustwo				{	font-family: Helvetica, sans-serif; font-size: 6px; 
+						letter-spacing:0.1em;
+						color: rgba(0, 0, 0, 1);  text-align: left;
+						position: absolute; top: -5px; left: -20px; width: 200px; height:25px;line-height:110%;margin:-10px;}
+						
+						
+#busthree				{	font-family: Helvetica, sans-serif; font-size: 6px; 
+						letter-spacing:0.1em;
+						color: rgba(0, 0, 0, 1); text-align: left;
+						position: absolute; top: -5px; left: -20px; width:200px; height:25px; line-height:110%;margin:-10px;}
+					
+						
+#busfour				{	font-family: Helvetica, sans-serif; font-size: 6px; 
+						letter-spacing:0.1em;
+						color: rgba(0, 0, 0, 1);  text-align: left;
+						position: absolute; top: -5px; left: -20px; width: 200px; height:25px;line-height:110%;margin:-10px;}
+
+.nextbus			{	position: absolute; left: 190px; top: 10px;
+						font: Helvetica, sans-serif; font-size:6px;
+						letter-spacing: 0.1em;}
+					
+					
+.nextbustext			{	font-family: Helvetica, sans-serif; font-size: 6px; 
+						letter-spacing: 0.1em;
+						position: relative; top: 8px; left: -15px; float:right; line-height: 110%;}
+						
+.routeinfotext			{	font-family: Helvetica, sans-serif; font-size: 6px; 
+						letter-spacing: 0.1em;
+						position: relative; top: -19px; left: 15px;
+						text-align:left;line-height: 110%; margin-left:15px;margin-bottom:0px;}
+
+
+.routeicon			{	padding:3.3px; border: 0.5px solid white; 
+						width:16px; height:16px; margin-left:5px;}
+				
+
+
+
+
+/* ItemLabel.kml, ItemLabelMedia.kml */
+
+.labelcontainer { position:absolute; left: 0px;}
+
+.twittercontainer { position:absolute; left: 0px;}
+
+.indicator		{ 	position: absolute; left: 0px; width: 35px; height:				
+					35px; padding: 5px; margin: 5px 20px 7px 0px;
+					background-color: rgba(255, 255, 255, 0.8); -webkit-border-radius: 10px;
+					-webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6)			}
+					
+.label			{	position: absolute; left: 50px; top:5px;height: 35px;
+					width: 260px; padding: 10px 5px 0px 10px;			font-family:	 Helvetica,sans-serif;
+					font-size: 10px; letter-spacing:0.1em; text-align: left; background-color: rgba(255, 255, 255, 0.8);					color: rgb(0,0,0);
+					-webkit-border-radius: 10px;
+					-webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6)				}
+								
+.mediacontainer	{ position:absolute; left: 0px;}
+		
+		.mediaindicator	{ 	position: absolute; left: 0px; width: 35px; height:				
+					35px; padding: 5px; margin: 5px 20px 7px 0px;
+					background-color: rgba(255, 255, 255, 0.8); -webkit-border-radius: 10px;
+					-webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6)			}
+					
+		.medialabel	{	position: absolute; left: 50px; top:5px; 
+					height: 35px; width: 260px; padding: 10px 5px 0px 10px;			font-family:	 Helvetica,sans-serif;
+					font-size: 10px; letter-spacing:0.1em; text-align: left; background-color: rgba(255, 255, 255, 0.8);					color: rgb(0,0,0);
+					-webkit-border-radius: 10px;
+					-webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6)				}
+					
+		.mediathumbnail	{	width:32px; height:32px;
+							position: relative; top: -7px;}
+							
+		.mediaicon		{ 		position:relative; left: 2px; top:2px;}
+		
+		.mediadescrip  	{		position:relative; left:0px; top:-15px}
+
+						
+						
+
+/* BusRoute.kml */					
+
+.infoarea_statefour	{	width: 200px; height: 10px; left: -165px; top: -130px;
+						vertical-align: bottom; text-align: left; position: absolute;}
+				
+.busrouteindicator {width:33px; height:33px; padding:5px; background-color: rgba(255,255,255,0.8);}						
+		
+#bus_icona 			{	position: absolute; left: 10px; top: 0px; width: 40px; 
+						height: 40px;
+						padding:5px; background-color: rgba(255,255,255,0.8);}
+						
+#bus_iconb 			{	position:absolute; left: 120px; top: 10px; width: 40px; 
+						height:40px;
+						padding:5px; background-color: rgba(255,255,255,0.8);}
+						
+#bus_iconc 			{	position: absolute; left: 220px; top:10px; width:40px; 
+						height:40px;
+						padding:5px; background-color: rgba(255,255,255,0.8);}
+						
+#bus_icond 			{	position: absolute; left: 250px; top: -70px;
+						width: 40px; height:40px;
+						padding:5px; background-color: rgba(255,255,255,0.8);}
+						
+
+/* ImageGallery.kml */	
+										
+#infoarea_gallery		{ width: 330px; height:	230px; left:						
+						-165px; top: -160px;	
+						background-color: rgba(255, 255, 255, 0.8);	
+						color: rgba(0, 0, 0, 1); vertical-align: bottom;
+						text-align: left; position: absolute; } 
+
+
+#gallery_detail	{position:absolute;left:11px;top:16px;
+					width:230px;padding:3px}
+
+.galleryimage {border:2px solid white;}
+
+.gallerytext {	font-family:Helvetica, sans-serif;
+				font-size:5px;letter-spacing:0.1em; 
+				position:absolute; left:243px; top:3px;width:55px;
+				height: 160px; background-color:white;padding:3px;} 
+
+
+#prevnav {font-family:Helvetica, sans-serif;font-size:5px;letter-spacing:0.1em; 
+			font-weight:600; border:2px solid orange; width:35px;height:10px;position:absolute;left:25px;top:195px;
+			padding: 0px 5px 7px 5px;font-size:7px;}
+
+
+#nextnav {font-family:Helvetica, sans-serif;font-size:5px; 
+			letter-spacing:0.1em; font-weight:600; border:2px solid orange; width:35px;height:10px;position:absolute;left:170px;top:195px; padding: 0px 5px 7px 5px;font-size:7px;}
+			
+			                </style>
+                <script type="text/javascript">
+// Copyright (C) 2008 Google Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * Parses a string of well-formed JSON text.
+ *
+ * If the input is not well-formed, then behavior is undefined, but it is
+ * deterministic and is guaranteed not to modify any object other than its
+ * return value.
+ *
+ * This does not use `eval` so is less likely to have obscure security bugs than
+ * json2.js.
+ * It is optimized for speed, so is much faster than json_parse.js.
+ *
+ * This library should be used whenever security is a concern (when JSON may
+ * come from an untrusted source), speed is a concern, and erroring on malformed
+ * JSON is *not* a concern.
+ *
+ *                      Pros                   Cons
+ *                    +-----------------------+-----------------------+
+ * json_sans_eval.js  | Fast, secure          | Not validating        |
+ *                    +-----------------------+-----------------------+
+ * json_parse.js      | Validating, secure    | Slow                  |
+ *                    +-----------------------+-----------------------+
+ * json2.js           | Fast, some validation | Potentially insecure  |
+ *                    +-----------------------+-----------------------+
+ *
+ * json2.js is very fast, but potentially insecure since it calls `eval` to
+ * parse JSON data, so an attacker might be able to supply strange JS that
+ * looks like JSON, but that executes arbitrary javascript.
+ * If you do have to use json2.js with untrusted data, make sure you keep
+ * your version of json2.js so that you get patches as they're released.
+ *
+ * @param {string} json per RFC 4627
+ * @return {Object|Array}
+ * @author Mike Samuel <mikesamuel@gmail.com>
+ */
+var jsonParse = (function () {
+  var number
+      = '(?:-?\\b(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\\b)';
+  var oneChar = '(?:[^\\0-\\x08\\x0a-\\x1f\"\\\\]'
+      + '|\\\\(?:[\"/\\\\bfnrt]|u[0-9A-Fa-f]{4}))';
+  var string = '(?:\"' + oneChar + '*\")';
+
+  // Will match a value in a well-formed JSON file.
+  // If the input is not well-formed, may match strangely, but not in an unsafe
+  // way.
+  // Since this only matches value tokens, it does not match whitespace, colons,
+  // or commas.
+  var jsonToken = new RegExp(
+      '(?:false|true|null|[\\{\\}\\[\\]]'
+      + '|' + number
+      + '|' + string
+      + ')', 'g');
+
+  // Matches escape sequences in a string literal
+  var escapeSequence = new RegExp('\\\\(?:([^u])|u(.{4}))', 'g');
+
+  // Decodes escape sequences in object literals
+  var escapes = {
+    '"': '"',
+    '/': '/',
+    '\\': '\\',
+    'b': '\b',
+    'f': '\f',
+    'n': '\n',
+    'r': '\r',
+    't': '\t'
+  };
+  function unescapeOne(_, ch, hex) {
+    return ch ? escapes[ch] : String.fromCharCode(parseInt(hex, 16));
+  }
+
+  // A non-falsy value that coerces to the empty string when used as a key.
+  var EMPTY_STRING = new String('');
+  var SLASH = '\\';
+
+  // Constructor to use based on an open token.
+  var firstTokenCtors = { '{': Object, '[': Array };
+
+  return function (json) {
+    // Split into tokens
+    var toks = json.match(jsonToken);
+    // Construct the object to return
+    var result;
+    var tok = toks[0];
+    if ('{' === tok) {
+      result = {};
+    } else if ('[' === tok) {
+      result = [];
+    } else {
+      throw new Error(tok);
+    }
+
+    // If undefined, the key in an object key/value record to use for the next
+    // value parsed.
+    var key;
+    // Loop over remaining tokens maintaining a stack of uncompleted objects and
+    // arrays.
+    var stack = [result];
+    for (var i = 1, n = toks.length; i < n; ++i) {
+      tok = toks[i];
+
+      var cont;
+      switch (tok.charCodeAt(0)) {
+        default:  // sign or digit
+          cont = stack[0];
+          cont[key || cont.length] = +(tok);
+          key = void 0;
+          break;
+        case 0x22:  // '"'
+          tok = tok.substring(1, tok.length - 1);
+          if (tok.indexOf(SLASH) !== -1) {
+            tok = tok.replace(escapeSequence, unescapeOne);
+          }
+          cont = stack[0];
+          if (!key) {
+            if (cont instanceof Array) {
+              key = cont.length;
+            } else {
+              key = tok || EMPTY_STRING;  // Use as key for next value seen.
+              break;
+            }
+          }
+          cont[key] = tok;
+          key = void 0;
+          break;
+        case 0x5b:  // '['
+          cont = stack[0];
+          stack.unshift(cont[key || cont.length] = []);
+          key = void 0;
+          break;
+        case 0x5d:  // ']'
+          stack.shift();
+          break;
+        case 0x66:  // 'f'
+          cont = stack[0];
+          cont[key || cont.length] = false;
+          key = void 0;
+          break;
+        case 0x6e:  // 'n'
+          cont = stack[0];
+          cont[key || cont.length] = null;
+          key = void 0;
+          break;
+        case 0x74:  // 't'
+          cont = stack[0];
+          cont[key || cont.length] = true;
+          key = void 0;
+          break;
+        case 0x7b:  // '{'
+          cont = stack[0];
+          stack.unshift(cont[key || cont.length] = {});
+          key = void 0;
+          break;
+        case 0x7d:  // '}'
+          stack.shift();
+          break;
+      }
+    }
+    // Fail if we've got an uncompleted object.
+    if (stack.length) { throw new Error(); }
+    return result;
+  };
+})();
+                </script>        
+                <script type="text/javascript">
+Array.prototype.has = function(v, i) {
+	for ( var j = 0; j < this.length; j++) {
+		if (this[j] == v)
+			return (!i ? true : j);
+	}
+	return false;
+}
+
+var willingnessValue = new Array('', "open", "closed"); // offline, online, busy
+var willingnessIcon = new Array("http://rnoc-vtg.cip.gatech.edu/ChannelServer/images/offlinex32.png",
+		"http://rnoc-vtg.cip.gatech.edu/ChannelServer/images/onlinex32.png",
+		"http://rnoc-vtg.cip.gatech.edu/ChannelServer/images/busyx32.png");
+var userIds = new Array();
+var presencePoller;
+var presenceURL = "http://rnoc-vtg.cip.gatech.edu/ChannelServer/wcf/presence";
+var presenceQuery = "user-uri=sip:";
+
+var c2dURL = "http://rnoc-vtg.cip.gatech.edu/ChannelServer/wcf/c2d";
+var c2dQuery = "";
+
+var busURL = "http://rnoc-vtg.cip.gatech.edu/ChannelServer/bus/prediction";
+var busQuery = "stop=";
+
+function registerUserIdForPresence(userId) {
+	if (userIds.has(userId)) {
+		console.log("Already have this user, skipping adding: " + userId);
+	} else {
+		userIds.push(userId);
+	}
+}
+
+function deregisterUserIdForPresence(userId) {
+	var index = userIds.has(userId);
+	if (index != false) {
+		userIds[index] = undefined;
+	} else {
+		console.log("This userid doesn't exist in the lsit : " + userId)
+	}
+
+}
+
+function toggle(id) {
+	var a = document.getElementById(id);
+	if (a.className == "invisible") {
+		a.className = "not-invisible";
+	} else {
+		a.className = "invisible";
+	}
+}
+
+function toggleContent(id) {
+	var small = document.getElementById("content_small_" + id);
+	var large = document.getElementById("content_" + id);
+	if (small.style.display == "none") {
+		small.style.display = "block";
+		large.style.display = "none";
+	} else {
+		small.style.display = "none";
+		large.style.display = "block";
+	}
+}
+
+function startPresencePoller() {
+
+	if (!presencePoller) {
+		console.log("Presence poller starting");
+		setInterval(getPresences, 10000);
+	} else {
+		console.log("Presence poller already started");
+	}
+}
+
+function getPresences() {
+
+	console.log("Getting presence");
+	for (i = 0; i < userIds.length; i++) {
+		console.log("For " + userIds[i]);
+		var userId = userIds[i];
+		getPresence(userId);
+	}
+}
+
+function getPresence(userId) {
+	$.get(presenceURL, presenceQuery + userId, function(data, textStatus, xhr) {
+		showPresence(userId, data, textStatus, xhr)
+	}, "json");
+}
+function showPresence(userId, data, textStatus, xhr) {
+
+	console.log("Showing presence for " + userId + " : " + data + "  "
+			+ textStatus);
+	console.log(data);
+	var willingness = data.willingness;
+	var note = data.note;
+
+	if (willingness) {
+		// get the image source icon url
+		var index = willingnessValue.has(willingness);
+
+		if (index != false) {
+			// find all status images for this user id
+			$("img." + userId).each(function(index, element) {
+				$(element).attr('src', willingnessIcon[i]);
+			});
+		}
+	}
+
+	if (note) {
+		$("[span." + userId + ".userNote").each(function(index, element) {
+			$(element).html(note);
+		});
+	}
+}
+
+function click2dial(src, dest) {
+
+	$.get(c2dURL, "src=" + src + "&dest=" + dest);
+}
+
+function getPrediction(stop){
+	$.get(busURL, busQuery + stop, function(data, textStatus, xhr){
+		if(textStatus === 'success'){
+			$('#infoarea').html(data);
+		}
+	}, "html");
+}                </script>
+            ]]></description>
+            <styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+            <visibility>0</visibility>
+            <Point>
+                <coordinates>-84.390122,33.774877,0</coordinates> <!-- (~0.5 km) north northeast of Centennial Park -->
+            </Point>
+        </Placemark>
+        
+        <ScreenOverlay>
+		<name>Info Dock</name>
+		<description><![CDATA[
+        
+						<div id="infoarea">
+			
+			<img src="http://www.artsdigital.com/ar_browser/images/hand_dot.png"/>
+			
+			<span class="infoarea_text">
+			
+            <form name="input" action="javascript:loadNextExample();" method="get">
+            <div>Input</div>
+			<input id="search" value="" type="text" name="keyword"/>
+            </form>
+						
+			</span>
+			
+			
+			</div>]]>
+		</description>
+		<screenXY x="0.5" y="0.55" xunits="fraction" yunits="fraction"/>
+		<styleUrl>#undecorated_style</styleUrl>
+	</ScreenOverlay>
+        
+ 	<ScreenOverlay id="vta_menu">
+		<name>Overlay Slider</name>
+		<description><![CDATA[
+		<script language="text/javascript">
+		function setDivClosed() {
+            var div1 = document.getElementById("vta_menu_closed");
+			div1.style.visibility = "visible";
+            var div2 = document.getElementById("vta_menu_open");
+			div2.style.visibility = "hidden";
+			console.log("set menu closed");
+		};
+		function setDivOpen() {
+			$('#vta_menu_contacts').css('border-style','none');
+			$('#vta_menu_schedule').css('border-style','none');
+			$('#vta_menu_future').css('border-style','none');
+			$('#vta_menu_gt').css('border-style','none');
+            var div1 = document.getElementById("vta_menu_closed");
+			div1.style.visibility = "hidden";
+            var div2 = document.getElementById("vta_menu_open");
+			div2.style.visibility = "visible";
+			var myExtendedDataUpdateJSON = { data : { personal : "1" },
+											  prop : { visibility : "1" }};
+			KHARMA.updateKMLExtendedData(myExtendedDataUpdateJSON,true);
+			var myExtendedDataUpdateJSON2 = { data : { personal : "0" },
+											  prop : { visibility : "1" }};
+			KHARMA.updateKMLExtendedData(myExtendedDataUpdateJSON2,true);
+			console.log("set menu open");
+		};
+		function setMenuContacts() {
+			$('#vta_menu_contacts').css('border-style','solid');
+			$('#vta_menu_schedule').css('border-style','none');
+			$('#vta_menu_future').css('border-style','none');
+			$('#vta_menu_gt').css('border-style','none');
+			var myExtendedDataUpdateJSON = { data : { contact : "1" },
+											  prop : { visibility : "1" }};
+			KHARMA.updateKMLExtendedData(myExtendedDataUpdateJSON,true);
+			var myExtendedDataUpdateJSON2 = { data : { contact : "0" },
+											  prop : { visibility : "0" }};
+			KHARMA.updateKMLExtendedData(myExtendedDataUpdateJSON2,true);
+			console.log("vta set contacts");
+		};
+		function setMenuSchedule() {
+			$('#vta_menu_contacts').css('border-style','none');
+			$('#vta_menu_schedule').css('border-style','solid');
+			$('#vta_menu_future').css('border-style','none');
+			$('#vta_menu_gt').css('border-style','none');
+			var myExtendedDataUpdateJSON = { data : { personal : "1" },
+											  prop : { visibility : "1" }};
+			KHARMA.updateKMLExtendedData(myExtendedDataUpdateJSON,true);
+			var myExtendedDataUpdateJSON2 = { data : { personal : "0" },
+											  prop : { visibility : "0" }};
+			KHARMA.updateKMLExtendedData(myExtendedDataUpdateJSON2,true);
+			console.log("vta set schedule");
+		};
+		function setMenuFuture() {
+			//$('#vta_menu_contacts').css('border-style','none');
+			//$('#vta_menu_schedule').css('border-style','none');
+			$('#vta_menu_future').css('border-style','solid');
+			$('#vta_menu_gt').css('border-style','none');
+			//var myExtendedDataUpdateJSON = { data : { personal : "1" }, prop : { visibility : "0" }};
+			//updateKMLExtendedData(myExtendedDataUpdateJSON,true);
+			//var myExtendedDataUpdateJSON2 = { data : { personal : "0" }, prop : { visibility : "0" }};
+			//updateKMLExtendedData(myExtendedDataUpdateJSON2,true);
+			var myExtendedDataUpdateJSON3 = { data : { keyword : "gt-vta" }, prop : { visibility : "1" }};
+			KHARMA.updateKMLExtendedData(myExtendedDataUpdateJSON3,true);
+			console.log("vta set future media");
+		};
+		function setMenuGT() {
+			//$('#vta_menu_contacts').css('border-style','none');
+			//$('#vta_menu_schedule').css('border-style','none');
+			$('#vta_menu_future').css('border-style','none');
+			$('#vta_menu_gt').css('border-style','solid');
+			//var myExtendedDataUpdateJSON = { data : { personal : "1" }, prop : { visibility : "0" }};
+			//updateKMLExtendedData(myExtendedDataUpdateJSON,true);
+			//var myExtendedDataUpdateJSON2 = { data : { personal : "0" }, prop : { visibility : "0" }};
+			//updateKMLExtendedData(myExtendedDataUpdateJSON2,true);
+			var myExtendedDataUpdateJSON3 = { data : { keyword : "gtfootball" },
+											  prop : { visibility : "1" }};
+			KHARMA.updateKMLExtendedData(myExtendedDataUpdateJSON3,true);
+			console.log("vta set GT");
+		};
+        function vta_menu_init() {
+			$('#vta_menu_closed').bind('click',function(event) {event.stopPropagation(); setDivOpen()});
+			$('#vta_menu_open').bind('click',function(event) {event.stopPropagation(); setDivClosed()});
+			$('#vta_menu_contacts').bind('click',function(event) {event.stopPropagation(); setMenuContacts()});
+			$('#vta_menu_schedule').bind('click',function(event) {event.stopPropagation(); setMenuSchedule()});
+			$('#vta_menu_future').bind('click',function(event) {event.stopPropagation(); setMenuFuture()});
+			$('#vta_menu_gt').bind('click',function(event) {event.stopPropagation(); setMenuGT()});
+			console.log('vta_menu initialized');
+		}
+		function hudElement(id) {};
+        </script>	 
+		<div style="position: absolute; width: 110px; height: 274px; left: -250px; top: -240px; visibility: visible" id="vta_menu_closed"><img width=110px; height=274px; src="http://www.alexshill.com/files/vta_menu_closed.png"/></div>
+		<div style="position: absolute; width: 110px; height: 274px; left: -160px; top: -240px; visibility: hidden" id="vta_menu_open"><img width=110px; height=274px; src="http://www.alexshill.com/files/vta_menu_open.png"/>
+		<div style="position: absolute; width: 60px; height: 55px; left: 8px; top: 6px; visibility: inherit; border-width: 2px; border-style:none; border-color: black" id="vta_menu_contacts"><img width=60px; height=55px; src="http://www.alexshill.com/files/vta_menu_contacts.png"/></div>
+		<div style="position: absolute; width: 60px; height: 55px; left: 8px; top: 70px; visibility: inherit; border-width: 2px; border-style:none; border-color: black" id="vta_menu_schedule"><img width=60px; height=55px; src="http://www.alexshill.com/files/vta_menu_time.png"/></div>
+		<div style="position: absolute; width: 60px; height: 55px; left: 8px; top: 145px; visibility: inherit; border-width: 2px; border-style:none; border-color: black" id="vta_menu_future"><img width=60px; height=55px; src="http://www.alexshill.com/files/vta_menu_future.png"/></div>
+		<div style="position: absolute; width: 60px; height: 55px; left: 8px; top: 210px; visibility: inherit; border-width: 2px; border-style:none; border-color: black" id="vta_menu_gt"><img width=60px; height=55px; src="http://www.alexshill.com/files/vta_menu_gt.png"/></div>
+		</div>
+		]]>
+		</description>
+		<screenXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		<styleUrl>#undecorated_style</styleUrl>
+	</ScreenOverlay>
+
+       <NetworkLink id="network_link">
+            <Snippet maxLines="2">A curated GT Tour channel</Snippet>
+            <name>gttour.kml</name>
+            <Link>
+                <href>http://www.alexshill.com/files/gttour.kml</href> <!-- this is the server URL that will be called on queries -->
+                <httpQuery></httpQuery> <!-- string appended to the URL request -->
+            </Link>
+        </NetworkLink>
+
+    </Document>
+</kml>

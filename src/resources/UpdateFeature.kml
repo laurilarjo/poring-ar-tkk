@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Placemark id="description_javascript">
+		<name>Update Feature</name>
+        <description><![CDATA[
+        <script language="text/javascript">
+		var state = false;
+        function myFunction() {
+            var placemark = KHARMA.getKMLElementById('description_javascript');
+			console.log("Initial balloon visibility is:" + placemark.balloonVisibility);
+			placemark.balloonVisibility = false;
+			placemark.render();
+			console.log("Set balloon visibility to:" + placemark.balloonVisibility);
+            setTimeout(function(){var placemark=KHARMA.getKMLElementById('description_javascript');placemark.balloonVisibility=true;placemark.renderKMLObjects();}, 10000);
+        }
+
+        function description_javascript_init() {
+            $('#javascripttest_div').bind('click',function(event) {event.stopPropagation(); myFunction();});
+            console.log('description_javascript initialized');
+        }
+        </script>
+        <div id="javascripttest_div">Click here to toggle visbility</div>
+        ]]>
+        </description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude>0.0</latitude>
+				<longitude units="meters">-6.0</longitude> <!-- west of the user -->
+				<altitude>0.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+	</Placemark>    
+
+	<!-- KML document description -->
+	<name>UpdateFeature.kml</name>
+	<Snippet>Example of retrieving and setting KML DOM element property in JavaScript</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of retrieving and setting KML DOM element property in JavaScript</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> The client API can be used to retrieve KML DOM objects and manipulate their state
+		<li> to immediately see the result of the action you must call render() on the object
+		<li> clicking on the balloon text temporarily sets the visiblity to false
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">	 
+
+	<NetworkLink>
+		<name>Network Link Periodic</name>
+		<description>Example network link to query server on movement</description>
+		<Link>
+			<href>http://www.alexshill.com/files/examples/GeoSpotService.php</href>
+			<refreshMode>onInterval</refreshMode>   
+			<refreshInterval>30</refreshInterval>
+			<viewRefreshMode>onStop</viewRefreshMode>
+			<viewFormat>CAMERA=[cameraLon],[cameraLat]</viewFormat>
+			<httpQuery>radius=1.0</httpQuery>
+		</Link>
+	</NetworkLink>
+
+</kml>

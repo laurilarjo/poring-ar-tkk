@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Style id="undecorated_style">
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode> <!-- no styling applied to balloon -->
+		</BalloonStyle>
+	</Style>
+	
+	<Placemark>
+		<name>Unstyled Placemark Example</name>
+		<snippet>working example for vta demo of an item label</snippet>
+		<description><![CDATA[ 		<style type="text/css">
+		
+		.labelcontainer	{ position:absolute; left: 0px;}
+		
+		.indicator	{position: absolute; left: 150px; top:49px;height: 60px; 	
+					width: 30px; padding: 10px 5px 0px 10px;z-index:3;background-image:url(http://www.artsdigital.com/ar_browser/images/pointer_1.png); background-position:left top;background-repeat:no-repeat}
+					
+		.label		{	position: absolute; left: 50px; top:5px;height: 35px; 
+					width: 260px; padding: 10px 5px 0px 10px;	z-index:1;		font-family:	 Helvetica,sans-serif; font-size: 10px; letter-spacing:0.1em; text-align: left; background-color: rgba(255, 255, 255, 1.0);					color: rgb(0,0,0); -webkit-border-radius: 50px; -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.6);				} 
+					
+	.labeltext	{	position: absolute; left: 67px; top:16px;height: 25px; 
+					width: 200px;	z-index:5;		font-family:	 Helvetica,sans-serif; font-size: 9px; letter-spacing:0.1em; text-align: left; 					color: rgb(0,0,0);overflow:hidden;				} 
+					
+		.itemthumb	{width:45px; height:34px;position: relative; top: 
+						11px;right:-260px;z-index:3}
+						
+		.presence	{width:15px; height:15px;position: relative; top: 
+						-3px;right:-240px;z-index:4}
+					
+					
+		</style>
+		
+			<div id="labelcontainer">
+					
+					<div class="indicator">
+					
+					
+					</div>			
+					
+					<span class="label">
+					
+					
+					</span>	
+					
+					<span class="labeltext">
+					
+					GT Conference Center
+					
+					</span>		
+					
+				
+					
+							<img src="http://www.artsdigital.com/ar_browser/images/itemthumb.jpg" class="itemthumb"/>
+							
+							<img src="http://www.artsdigital.com/ar_browser/images/presence_green.png" class="presence"/>
+							
+					
+					
+				</div>
+        ]]>
+		
+		
+		</description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-6.0</latitude> <!-- southwest of the user -->
+				<longitude units="meters">-6.0</longitude> <!-- southwest of the user -->
+				<altitude>0.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+		<styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>
+	
+		<Placemark>
+		<name>Unstyled Placemark Example</name>
+		<snippet>working example for vta demo of an item label</snippet>
+		<description><![CDATA[ 	
+		
+			
+		
+			<div id="labelcontainer">
+					
+					<div class="indicator">
+					
+					
+					</div>			
+					
+					<span class="label">
+					
+					
+					</span>	
+					
+					<span class="labeltext">
+					
+					Biltmore Hotel
+					
+					</span>		
+					
+				
+					
+							<img src="http://www.artsdigital.com/ar_browser/images/itemthumb.jpg" class="itemthumb"/>
+							
+							<img src="http://www.artsdigital.com/ar_browser/images/presence_green.png" class="presence"/>
+							
+					
+					
+				</div>
+        ]]>
+		
+		
+		</description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-10.0</latitude> <!-- southwest of the user -->
+				<longitude units="meters">-9.0</longitude> <!-- southwest of the user -->
+				<altitude>4.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+		<styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>
+	 
+	 <Placemark>
+		<name>Unstyled Placemark Example</name>
+		<snippet>working example for vta demo of an item label</snippet>
+		<description><![CDATA[ 
+		
+		
+		
+			<div id="labelcontainer">
+					
+					<div class="indicator">
+					
+					
+					</div>			
+					
+					<span class="label">
+					
+					
+					</span>	
+					
+					<span class="labeltext">
+					
+					Barnes and Noble
+					
+					</span>		
+					
+				
+					
+							<img src="http://www.artsdigital.com/ar_browser/images/itemthumb.jpg" class="itemthumb"/>
+							
+							<img src="http://www.artsdigital.com/ar_browser/images/presence_green.png" class="presence"/>
+							
+					
+					
+				</div>
+		
+        ]]>
+		
+		
+		</description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-4.0</latitude> <!-- southwest of the user -->
+				<longitude units="meters">-3.0</longitude> <!-- southwest of the user -->
+				<altitude>-1.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+		<styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>
+	
+	
+	 <Placemark>
+		<name>Unstyled Placemark Example</name>
+		<snippet>working example for vta demo of an item label</snippet>
+		<description><![CDATA[ 
+		
+		
+			<div id="labelcontainer">
+					
+					<div class="indicator">
+					
+					
+					</div>			
+					
+					<span class="label">
+					
+					
+					</span>	
+					
+					<span class="labeltext">
+					
+					GT Conference Center
+					
+					</span>		
+					
+				
+					
+							<img src="http://www.artsdigital.com/ar_browser/images/itemthumb.jpg" class="itemthumb"/>
+							
+							<img src="http://www.artsdigital.com/ar_browser/images/presence_green.png" class="presence"/>
+							
+					
+					
+				</div>
+		
+        ]]>
+		
+		
+		</description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-5.0</latitude> <!-- southwest of the user -->
+				<longitude units="meters">-3.0</longitude> <!-- southwest of the user -->
+				<altitude>1.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+		<styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>
+	 
+	<!-- KML document description -->
+	<name>DescriptionUnstyled.kml</name>
+	<Snippet>Example of a placemark balloon description with no styling</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of a placemark balloon description with no styling</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> the KARML extension adds "unstyled" to the displayMode element
+		<li> default balloon description styling is application specific
+		<li> setting styleUrl to an unstyled BalloonStyle overrides the default 
+		<ul>
+		<li> the BalloonStyle element can also adjust default style colors
+		</ul>
+		<li> an unstyled description is white text against a transparent background
+		<ul>
+		<li> analogous to how unstyled HTML text is black against white
+		</ul>
+		<li> the placemark description balloon should appear to the southwest of the user 
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

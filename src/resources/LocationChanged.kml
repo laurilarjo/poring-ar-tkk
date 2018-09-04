@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document id="doc">
+	
+	<Style id="overlayStyle"> <!-- style for ScreenOverlay -->
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode>
+		</BalloonStyle>
+	</Style>
+
+	<ScreenOverlay id="description_javascript">
+		<name>Location Changed</name>
+		<description><![CDATA[
+        <script type="text/javascript">
+        var counter = 0;
+        function displayLocation()
+        {
+            var myLoc = KHARMA.getLocation();
+            if(myLoc != null)
+            {
+                var lat = myLoc.latitude;
+                var lon = myLoc.longitude;         
+                document.getElementById("outputDiv").innerHTML = "Location:<br>Lat: " + lat + "<br>Lon:" + lon + "<br>Updates: " + counter;
+            }
+            else
+            {
+                document.getElementById("outputDiv").innerHTML = "Location: Null<br>Counter: " + counter;
+            }            
+            counter++;
+            console.log('location update received');
+        }
+        function description_javascript_init() {
+            $(document).bind('locationChanged',function(event) {displayLocation()});
+            console.log('description_javascript initialized');
+        }
+        </script>
+        <div id="outputDiv" style="font-family:sans-serif; font-size:8px; width:300px">Location: [Empty]</div>
+        ]]>
+		</description>
+		<overlayXY x="0.0" y="0.0" xunits="fraction" yunits="fraction"/> 
+		<screenXY x="0.1" y="0.9" xunits="fraction" yunits="fraction"/>
+		<size x="0" y="0" xunits="pixels" yunits="pixels"/>
+		<styleUrl>#overlayStyle</styleUrl>
+	</ScreenOverlay>
+	
+	<!-- KML document description -->
+	<name>LocationChanged.kml</name>
+	<Snippet>Example of binding to KHARMA location events and retrieving location data</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of binding to KHARMA location events and retrieving location data</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> The client API will generate the <em>locationChanged</em> event for each location udpate
+		<li> binding a function to this event will call the function each time the event is generated
+		<li> the updated location is displayed in the overlay
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

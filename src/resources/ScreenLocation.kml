@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document id="doc">
+	
+	<Style id="undecorated_style"> <!-- style for ScreenOverlay -->
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode>
+		</BalloonStyle>
+	</Style>
+
+	<Placemark id="description_javascript">
+		<name>Screen Location</name>
+		<snippet>Example of determining screen location of a placemark</snippet>
+		<description><![CDATA[
+        <script language="text/javascript">
+        function displayLocation() {
+            var offset = $('#javascriptimage_div').offset();
+            var div = document.getElementById('javascripttest_div');
+            div.innerHTML = 'left:' + offset.left + ' top:' + offset.top;
+            //console.log('changed orientation');
+        }
+        function description_javascript_init() {
+            $(document).bind('orientationChanged',function(event) {displayLocation()});
+            console.log('description_javascript initialized');
+        }
+        </script>
+        <div id="javascriptimage_div"><img src="http://maps.google.com/mapfiles/kml/pal3/icon21.png"></div>
+        <div id="javascripttest_div">Initial data</div>
+		]]>
+    	</description>        
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-6.0</latitude> <!-- south southwest of the user -->
+				<longitude units="meters">-3.0</longitude> <!-- south southwest of the user -->
+				<altitude>0.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+		<styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>    
+	
+	<!-- KML document description -->
+	<name>ScreenLocation.kml</name>
+	<Snippet>Example of retrieving screen location of a div element</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of retrieving screen location of a div element</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> The client API will generate the <em>orientationChanged</em> event for each orientation udpate
+		<li> binding a function to this event will call the function each time the event is generated
+		<li> calling the JQuery offset() function on a div returns screen location
+		<li> the updated screen location is displayed next to the placemark
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

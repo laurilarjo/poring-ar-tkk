@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Placemark>
+		<name>Balloon Billboard</name>
+		<description>Example balloon with billboard orientation</description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">-6.0</latitude> <!-- south of user -->
+				<longitude units="meters">6.0</longitude> <!-- east of user -->
+				<altitude>0.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode> <!-- fixed, relative, billboard -->
+			<orientation>
+				<heading>0.0</heading>
+				<tilt>0.0</tilt>
+				<roll>0.0</roll>
+			</orientation>
+		</Balloon>
+	</Placemark>
+	
+	<!-- KML document description -->
+	<name>BalloonBillboard.kml</name>
+	<Snippet>Example of orienting a placemark balloon towards the device</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of orienting a placemark balloon towards the device</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> the KARML orientationMode element can be "fixed" (default), "billboard" or "relative"
+		<li> billboard orientation overrides any information in the orientation element
+		<li> the placemark description balloon should appear to the southwest of the user 
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

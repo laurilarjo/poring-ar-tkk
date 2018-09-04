@@ -1,0 +1,23 @@
+application: poringar
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /resources
+  static_dir: resources
+    
+- url: /example_artsdigital
+  static_dir: example_artsdigital
+
+- url: /omat
+  static_dir: omat
+  
+- url: /argon
+  static_dir: argon
+  
+- url: /images
+  static_dir: images
+  
+- url: /.*
+  script: helloworld.py

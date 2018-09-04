@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script>
+</script>
+<style>
+.header-wrapper {
+	float: left;
+	width: 30%;
+	height: 100px;
+}
+.statusbar-wrapper {
+	float: left;
+	width: 60%;
+	height: 100px;
+}
+
+ul { list-style: none; margin: 0px; padding: 0px; }
+li { line-height: 1em; font-size:  }
+
+img.percentImage {
+ background: white url(../images/percentimageback.png) top left no-repeat;
+ padding: 0;
+ margin: 5px 0 0 0;
+ background-position: 1px 0;
+}
+
+#bottombar	{ width: 330px; height: 100px; left: 5px; top:100px;
+			background-color: rgba(255, 255, 255, 0.8); color: rgba(0, 0, 0, 1);
+			vertical-align: bottom; text-align: left; position: absolute;
+			}
+			
+#topbar	{ width: 330px; height: 100px; left: 5px; top:0px;
+			background-color: rgba(255, 255, 255, 0.8); color: rgba(0, 0, 0, 1);
+			vertical-align: bottom; text-align: left; position: absolute;
+			}
+
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+var UI = {
+	HP : { 
+		amount : 100, //read-only
+		div : '#hp-bar', //private, don't touch
+		
+		add : function(amount) {
+			UI.add(this, amount);
+		},
+		remove : function(amount) {
+			UI.remove(this, amount);
+		}
+	},
+	Mana : { 
+		amount : 100, //read-only
+		div : '#mana-bar', //private, don't touch
+		
+		add : function(amount) {
+			UI.add(this, amount);
+		},
+		remove : function(amount) {
+			UI.remove(this, amount);
+		}
+	},
+	
+	add : function(target, amount) {
+		target.amount += amount;		
+		var newAmount = target.amount * 1.2 - 120;
+		newAmount = newAmount + "px 0";
+		//pyörii välillä -120 -> +1, eli 1HP = 1,2px
+		if (target.amount >= 100)	{
+			target.amount = 100;
+			$(target.div).css("background-position", "1px 0");
+		}
+		else {
+			$(target.div).css("background-position", newAmount);
+		}
+	},
+	
+	remove : function(target, amount) {
+		target.amount -= amount;
+		var newAmount = target.amount * 1.2 - 120;
+		newAmount = newAmount + "px 0";		
+		if (target.amount <= 0)	{
+			target.amount = 0;
+			$(target.div).css("background-position", "-120px 0");
+		}
+		else {
+			$(target.div).css("background-position", newAmount);
+		}
+	},
+	
+};
+
+</script>
+
+</head>
+<body>
+
+<div id="topbar">
+
+		<div class="header-wrapper">
+			
+			<ul>
+				<li>Fraktile</li>
+				<li>Level 9</li>
+			</ul>			
+			
+		</div>
+		
+		<div class="statusbar-wrapper">
+			<ul>
+				<li>HP <img id="hp-bar" src="../images/percentImage.png" 
+				    alt="9.5%" 
+				    class="percentImage" />
+				</li>
+				<li>Mana <img id="mana-bar" src="../images/percentImage.png" 
+				    alt="9.5%" 
+				    class="percentImage" />
+				 </li>
+			</ul>
+		
+		</div>
+		</div>	
+</body>
+</html>

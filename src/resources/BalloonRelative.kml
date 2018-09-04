@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+  <Placemark id="balloon_relative"> <!-- feature id only required for fragment references -->
+    <name>Balloon Relative</name>
+    <description>Example balloon relative to the device</description>
+    <Balloon>
+      <locationMode>relative</locationMode> <!-- fixed, relative -->
+      <location>
+        <latitude units="meters">6.0</latitude> <!-- north of user -->
+        <longitude>0.0</longitude>
+        <altitude>0.0</altitude>
+      </location>
+    </Balloon>
+  </Placemark>
+  
+  <!-- KML document description -->
+  <name>BalloonRelative.kml</name>
+  <Snippet>Example of creating a placemark description balloon relative to the user</Snippet>
+  <description><![CDATA[
+    <div><p><b>Example of creating a placemark description balloon relative to the device</b></p>
+    <p>
+    <b>notes:</b>
+    <ul>
+    <li> the KARML extension adds the Balloon element for controlling its placement
+    <li> the locationMode element can be "fixed" (default) or "relative" to another feature
+    <li> the default relative feature is the device (i.e. positioned relative to the user)
+    <li> the KARML extension adds a "units" attribute to the latitude and longitude location elements
+    <ul>
+    <li> valid units are "degrees" and "meters"
+    </ul>
+    <li> the placemark name "Balloon Relative" and the KAMRA icon should appear to the north of the user
+    <li> clicking on the placemark name or KAMRA icon reveals the balloon description
+    <li> clicking on the balloon description brings it up to the screen
+    </ul>
+    ]]>
+  </description>          
+</Document>
+</kml>

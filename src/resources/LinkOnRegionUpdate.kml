@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">	 
+	<NetworkLink>
+		<name>Link OnRegion</name>
+		<description>Example network link to query server on movement</description>
+		<Region> <!-- this sets up the limits for refreshing the link -->
+			<LatLonAltBox> <!-- establishes a bounding box for a region to test against -->
+				<north>34.0</north>
+				<south>33.5</south> 
+				<east>-83.0</east> 
+				<west>-84.0</west>
+				<minAltitude>0.0</minAltitude> 
+				<maxAltitude>100000.0</maxAltitude>
+				<!-- <north>0.01</north> -->
+				<!-- <south>-0.01</south> -->
+				<!-- <east>0.015</east> -->
+				<!-- <west>-0.015</west> -->
+				<!-- <minAltitude>-0.1</minAltitude> -->
+				<!-- <maxAltitude>0.1</maxAltitude> -->
+				<!-- <locationMode>relative</locationMode> -->
+			</LatLonAltBox>
+		</Region>
+		<Link>
+			<href>http://www.alexshill.com/files/examples/LinkControlCreate.php</href> <!-- this is the server URL that will be called on queries -->
+			<refreshMode>never</refreshMode>
+			<viewRefreshMode>onRegion</viewRefreshMode> <!-- look for a region against which to test for a query from href -->
+			<viewFormat>CAMERA=[cameraLon],[cameraLat],[cameraAlt]</viewFormat> <!-- macros expanded and appended to the URL request -->
+			<!-- <httpQuery>version=[clientVersion],client=[clientName]</httpQuery> string appended to the URL request -->
+		</Link>
+	</NetworkLink>
+</kml>

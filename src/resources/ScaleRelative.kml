@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Placemark id="balloon_billoard">
+		<name>Scale Relative</name>
+		<description>Example balloon with relative scaling</description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude>-0.005547</latitude> <!-- south (~0.5 kilometer) -->
+				<longitude>0.0</longitude>
+				<altitude>0.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+			<scaleMode>relative</scaleMode> <!-- fixed, relative -->
+			<scaleFactor>0.65</scaleFactor> <!-- default 0.75 -->
+			<scale>
+				<x>1.0</x>
+				<y>1.0</y>
+				<z>1.0</z>
+			</scale>
+		</Balloon>
+	</Placemark>
+	
+	<!-- KML document description -->
+	<name>ScaleRelative.kml</name>
+	<Snippet>Example of applying relative scaling to a placemark balloon</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of applying relative scaling to a placemark balloon</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> the KARML scaleMode element can be "fixed" (default) or "relative"
+		<li> realtive scale overrides any information in the scale element
+		<li> the scale of the description balloon does not affect the name and its icon
+		<ul>
+		<li> use the KARML Label element to adjust the scale of the label
+		</ul>
+		<li> the placemark description balloon should appear to the south of the user 
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

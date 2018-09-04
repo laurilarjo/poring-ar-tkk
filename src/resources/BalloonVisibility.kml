@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Placemark>
+		<name>Balloon Visibility</name>
+		<description>Example balloon with balloon visibility true</description>
+		<balloonVisibility>1</balloonVisibility> <!-- make balloon visible -->
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude>0.0</latitude> 
+				<longitude units="meters">6.0</longitude> <!-- east of user -->
+				<altitude>0.0</altitude>
+			</location>
+			<orientation>
+				<heading>-90.0</heading> <!-- facing west -->
+				<tilt>0.0</tilt>
+				<roll>0.0</roll>
+			</orientation>
+		</Balloon>
+	</Placemark>
+
+	<!-- KML document description -->
+	<name>BalloonVisibility.kml</name>
+	<Snippet>Example of setting a placemark description balloon to visible</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of setting a placemark description balloon to visible</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> setting the balloonVisibility element to "1" makes the description visible
+		<li> the placemark description balloon should appear to the west of the user 
+		<li> default balloon size is 300x300 pixels and the pixel/meter ratio is 100:1
+		<ul>
+		<li>  the balloon size should appear 3x3 meters at 6 meters distance
+		</ul>
+		<li> clicking on the balloon description brings it up to the screen
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

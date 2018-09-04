@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document>
+	
+	<Style id="undecorated_style">
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode>	<!-- kml:displayModeEnum -->
+		</BalloonStyle>
+	</Style>
+	
+	<ScreenOverlay>	
+		<name>Simple crosshairs</name>
+		<description><![CDATA[        
+            <script type="text/javascript">    
+                function callYahooPipes() 
+                {                    
+                    var search = document.getElementById("search_term").value;
+                    var results = 10;
+                    var lat;
+                    var lon;
+                    var myLoc = KHARMA.getLocation();
+                    
+                    if(myLoc != null)
+                    {
+                        var lat = myLoc.latitude;
+                        var lon = myLoc.longitude;
+                    }
+                    else
+                    {
+                        var lat = 33.0;
+                        var lon = -84.0;
+                    }
+                 
+                    var pipeURL = "http://pipes.yahoo.com/pipes/pipe.run?_id=92f73daf15830031e003f03245f25eb6&_render=kml&lat=" + lat + "&lon=" + lon + "&results=" + results + "&search=" + search;                                
+                    document.location=pipeURL;              
+                    console.log("calling " + pipeURL);            
+                    document.getElementById("btn").style.visibility = "hidden";
+                    document.getElementById("search_term").style.visibility = "hidden";
+                }
+            </script>
+            
+            <style type="text/css">
+                div.mystyle
+                {
+                    width:                        320px;
+                    height:                        40px;
+                    left:                        -160px;
+                    top:                        0px;
+                    font-family:                sans-serif;
+                    font-size:                    14px;
+                    background-color:            rgba(0, 0, 0, 0.5);
+                    border-width:                2px;
+                    border-color:                rgba(255, 255, 255, 1.0);             
+                    color:                        rgba(255, 255, 255, 1);
+                    vertical-align:                top;
+                    text-align:                    left;
+                    position: absolute;
+                }
+            </style>
+            
+            <div id="overlay" class="mystyle">
+                <form name="input" action="javascript:callYahooPipes();" method="get">
+                    Flickr Search: <input id="search_term" value="Birds" type="text" name="keyword"/>        
+                    <input id="btn" type="submit" value="Submit"/>
+                </form>
+            </div>]]>
+	
+		</description>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/pal3/icon21.png</href> <!-- //http://neic.usgs.gov/neis/maps/it-map.gif -->
+		</Icon>	
+		<overlayXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/> <!-- not currently implemented -->	
+		<screenXY x="0.5" y="0.9" xunits="fraction" yunits="fraction"/>
+		<size x="0" y="0" xunits="pixels" yunits="pixels"/>	
+		<styleUrl>#undecorated_style</styleUrl>
+	</ScreenOverlay>
+	
+	<!-- KML document description -->
+	<name>SearchFlickr.kml</name>
+	<Snippet>Example Flickr Search for Argon</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example Flickr Search for Argon</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li>searches for geo-tagged flickr images using Yahoo Pipes
+		<li>setting document.location creates a separate channel for search results
+		<li>displays flickr images as icons within the AR browser's viewing space
+		<li>click on icons to view entire image and link
+		<li>makes use of javascript functions embedded within the KML to get device location
+		</ul>
+		]]>
+	</description>   
+</Document>
+</kml>

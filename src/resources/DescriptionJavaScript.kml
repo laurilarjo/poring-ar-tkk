@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Placemark id="description_javascript">
+		<name>Placemark with JavaScript</name>
+		<snippet>Example of creating and calling a javascript function</snippet>
+		<description><![CDATA[
+        <script language="text/javascript">
+        function myFunction() {
+            var div = document.getElementById('javascripttest_div');
+            div.innerHTML = 'Dynamic HTML data after click event';
+            console.log('changed data');
+        }
+
+        function description_javascript_init() {
+            $('#javascripttest_div').bind('click',function(event) {event.stopPropagation(); myFunction();});
+            console.log('description_javascript initialized');
+        }
+        </script>
+        <div id="javascripttest_div">Initial data before click event</div>
+        ]]>
+		</description>        
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">6.0</latitude> <!-- northwest of the user -->
+				<longitude units="meters">-6.0</longitude> <!-- northwest of the user -->
+				<altitude>0.0</altitude>
+			</location>
+			<orientationMode>billboard</orientationMode>
+		</Balloon>
+	</Placemark>    
+
+	<!-- KML document description -->
+	<name>DescriptionJavaScript.kml</name>
+	<Snippet>Example of a placemark balloon description with JavaScript</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of a placemark balloon description with JavaScript</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> JavaScript can be used within the description balloon
+		<li> an initilization function is called for Placemarks with an id
+		<ul>
+		<li> function name is the Placemark id concatenated with "_init"
+		</ul>
+		<li> all JavaScript in each channel shares the same namespace
+		<li> the JQuery plugin is included in the client API
+		<li> use event stopPropagation() to prevent default balloon click behavior
+		<li> the placemark description balloon should appear to the northwest of the user 
+		<li> clicking on the balloon description text changes its data
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

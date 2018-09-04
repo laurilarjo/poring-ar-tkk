@@ -1,0 +1,90 @@
+<html>
+<head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script>
+function createUrl(folder, filename) {
+	var host = window.location.host
+	var url = host + "/" + folder + "/" + filename
+	return "<a href=kharma://" + url + ">" + url + "</a>"
+}
+
+var artsdigital = new Array(
+"BusRoute.kml",
+"ImageGallery.kml",
+"InfoDock_detailone.kml",
+"InfoDock_detailtwo.kml",
+"InfoDock_detailthree.kml",
+"InfoDock_detailfour.kml",
+"InfoDock.kml",
+"ItemLabel.kml",
+"ItemLabelTweet.kml",
+"ItemLabelwIcons.kml"
+)
+
+var argon = new Array(
+"engine.kml",
+"layout.kml",
+"monsters.kml")
+
+var resources = new Array(
+"BalloonBillboard.kml", 
+"balloongps.kml",
+"BalloonLabel.kml",
+"BalloonOrientation.kml",
+"BalloonRelative.kml",
+"BalloonVisibility.kml",
+"culc_scene.kml",
+"DescriptionCSS.kml",
+"DescriptionJavaScript.kml",
+"DescriptionUnstyled.kml",
+"Document.kml",
+"geospot.kml",
+"GeoSpotFolder.kml",
+"GeoSpotPanorama.kml",
+"GeoSpotUpdate.kml",
+"layarchannel.kml",
+"LinkOnRegion.kml",
+"LinkOnRegionUpdate.kml",
+"LinkPlacemark.kml",
+"LinkPlacemarkUpdate.kml",
+"LocationChanged.kml",
+"OrientationChanged.kml",
+"OverlayHTML.kml",
+"OverlayImage.kml",
+"PlacemarkPoint.kml",
+"ScaleRelative.kml",
+"ScreenLocation.kml",
+"SearchFlickr.kml",
+"SearchTwitter.kml",
+"SoundStatic.kml",
+"UpdateFeature.kml",
+"UpdateObject.kml"
+)
+
+
+var result = "<h1>OMAT</h1>"
+for (var i in argon) {
+	result += createUrl("argon", argon[i])
+	result += "<br/>"
+}
+	
+result += "<h1>Resources</h1>"
+for (var i in resources) {
+	result += createUrl("resources", resources[i])
+	result += "<br/>"
+}
+
+result += "<h1>Example_artsdigital</h1>"
+for (var i in artsdigital) {
+	result += createUrl("example_artsdigital", artsdigital[i])
+	result += "<br/>"
+}
+	
+document.write(result)
+		
+</script>
+</head>
+<body>
+<div id="poring_image_div">TŠŠ on Poringin kuva: <img src="../omat/poring_transparent.gif"/></div>
+</body>
+</html>

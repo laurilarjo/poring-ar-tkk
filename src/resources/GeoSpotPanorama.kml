@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	
+	<PhotoOverlay id="geospot_panorama">
+		<Name>GeoSpot Panorama</Name>
+        <description><![CDATA[
+        <script language="text/javascript">
+		function geospot_panorama_init()
+		{
+			setTimeout(function(){setGeoSpot('geospot_panorama')}, 20000);
+			$('#geospot_panorama_div').bind('click',function(event) {event.stopPropagation(); setGeoSpot('geospot_panorama');});
+			console.log("geospot_panorama initialized");
+		}
+		function setGeoSpot(featureId)
+		{
+			var myFeature = KHARMA.getKMLElementById(featureId);
+			if (myFeature)
+			{
+				myFeature.flyToBalloon(0);
+				console.log("setting geoSpot " + featureId);
+			}
+		}
+        </script>
+		
+		<div id=geospot_panorama_div>Centenial Park Fountain of Rings GeoSpot example</div>
+        ]]>
+		</description>
+		<Camera> 
+			<longitude>-84.39286</longitude>
+			<latitude>33.75933</latitude>
+			<altitude>0</altitude>
+			<heading>30.0</heading> <!-- panoramas not oriented due north can be adjusted here -->
+			<tilt>0</tilt>
+			<Icon>
+				<href>http://geospot.imtc.gatech.edu/image/03_12_2010_02_29_18_7162_icon.png</href>
+			</Icon>
+		</Camera>
+		<Point>
+			<coordinates>-84.39286,33.75933,0</coordinates>
+		</Point>
+		<Icon> <!-- link to panorama image -->
+			<href>http://geospot.imtc.gatech.edu/image/03_12_2010_02_29_18_7162_cube_$[side].png</href> <!-- $[side] resolves to front,rear,left,right,top,bottom (see doc)-->
+		</Icon>
+		<shape>cube</shape> <!-- only cube shaped panoramas are currently supported -->
+	</PhotoOverlay>
+	
+	<!-- KML document description -->
+	<name>GeoSpotPanorama.kml</name>
+	<Snippet>Example of a PhotoOverlay establishing a panoramic GeoSpot</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of a PhotoOverlay establishing a panoramic GeoSpot</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> a GeoSpot is a surveyed location the user indicate they are at
+		<li> the PhotoOverlay element replaces live video with a panorama
+		<li> a GeoSpot with a panorama overrides orientation accuracy
+		<li> the KARML extension adds "cube" to the shape element
+		<ul>
+		<li> the cube shape loads 6 images of a cubic panorama
+		<li> the Icon includes a macro that is expanded to 6 href strings
+		<ul>
+		<li> $[side] resolves to front,back,left,right,top,bottom
+		<li> $[n] resolves to 0,1,2,3,4,5
+		<li> $[s] resolves to f,b,l,r,u,d
+		</ul>
+		</ul>
+		<li> KHARMA presents panorama controls when at a panoramic GeoSpot
+		<ul>
+		<li> click on the "filmstrip" button to display the panorama
+		<li> click on the toggled "camera" button to return to live video
+		<li> the JavaScript demonstrates using the KHARMA API to fly to a GeoSpot
+		</ul>
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>

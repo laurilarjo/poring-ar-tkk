@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Style id="undecorated_style">
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode> <!-- no styling applied to balloon -->
+		</BalloonStyle>
+	</Style>
+	
+	<Placemark id="culc_center1">
+		<name>Unstyled Placemark Example</name>
+        <description><![CDATA[
+			<img src="http://10.0.1.3/~joona/images/poring.png"/>
+        ]]></description>
+		<balloonVisibility>1</balloonVisibility>
+		<Balloon>
+			<locationMode>relative</locationMode>
+			<location>
+				<latitude units="meters">4.0</latitude> <!-- southwest of the user -->
+				<longitude units="meters">-2.5</longitude> <!-- southwest of the user -->
+				<altitude>0.6</altitude>
+			</location>
+			<orientation>
+				<heading>31</heading> <!-- facing southwest -->
+				<tilt>0.0</tilt> <!-- tilted into vertical -->
+				<roll>0.0</roll>
+			</orientation>
+		</Balloon>
+		<styleUrl>#undecorated_style</styleUrl> <!-- reference to style element -->
+	</Placemark>
+
+	<PhotoOverlay>
+		<name>CULC2</name>
+		<author>
+			<name>Sacha Griffin</name>
+		</author>
+		<link href="http://www.seeit360.net"/>
+		<address/>
+
+		<description>Clough Undergraduate Learning Commons</description>
+		<Camera>
+			<longitude>24.825915</longitude>
+			<latitude>60.211899</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+
+			<tilt>0</tilt>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<Icon>
+				<href>http://10.0.1.3/~joona/images/poring.png</href>
+			</Icon>
+		</Camera>
+		<Icon>
+			<href>http://10.0.1.3/~joona/images/poring.png</href>
+			<!-- <href>http://www.seeit360.net/CULC/images/small/aug2_$[n].jpg</href> -->
+		</Icon>
+		<Point>
+			<coordinates>24.825915,60.211899</coordinates>
+		</Point>
+		<shape>cube</shape>
+	</PhotoOverlay>
+</Document>
+</kml>

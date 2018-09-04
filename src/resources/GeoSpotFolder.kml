@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+  
+  <Folder>
+    <Name>GeoSpot Folder</Name>
+    <description>Example geospot with multiple panoramas in a folder</description>
+    <Camera>
+      <longitude>-84.393505</longitude>
+      <latitude>33.762775</latitude>
+      <altitude>0</altitude>
+      <TimeSpan> <!-- applicable time for all associated GeoSpots (map view may eventually filter on these values) -->
+        <begin>1997-07-16T10:30:15+03:00</begin>
+        <end>1997-07-16T11:30:15+03:00</end>
+      </TimeSpan>  
+      <Icon>
+        <href>http://geospot.imtc.gatech.edu/image/03_12_2010_02_45_47_4316_icon.png</href>
+      </Icon>
+    </Camera>
+    <PhotoOverlay>
+      <Name>GeoSpot at Time 1</Name>
+      <description>World of Coke GeoSpot example 1</description>
+      <Camera>
+        <longitude>-84.393505</longitude>
+        <latitude>33.762775</latitude>
+        <altitude>0</altitude>
+        <TimeSpan> <!-- applicable time of this GeoSpot (map view may eventually filter on these values) -->
+          <begin>1997-07-16T19:30:15+03:00</begin>
+          <end>1997-07-16T20:30:15+03:00</end>
+        </TimeSpan>  
+        <Icon>
+          <href>http://geospot.imtc.gatech.edu/image/03_12_2010_02_45_47_4316_icon.png</href>
+        </Icon>
+      </Camera>
+      <Point>
+        <coordinates>-84.393505,33.762775,0</coordinates>
+      </Point>
+      <Icon>
+        <href>http://geospot.imtc.gatech.edu/image/03_12_2010_02_45_47_4316_cube_$[side].png</href>
+      </Icon>
+      <shape>cube</shape>
+    </PhotoOverlay>
+    <PhotoOverlay>
+      <Name>GeoSpot at Time 2</Name>
+      <description>World of Coke GeoSpot example 2</description>
+      <Camera>
+        <longitude>-84.393505</longitude>
+        <latitude>33.762775</latitude>
+        <altitude>0</altitude>
+        <TimeSpan> <!-- applicable time of this GeoSpot (map view may eventually filter on these values) -->
+          <begin>1997-07-16T20:30:15+03:00</begin>
+          <end>1997-07-16T21:30:15+03:00</end>
+        </TimeSpan>  
+        <Icon>
+          <href>http://geospot.imtc.gatech.edu/image/03_12_2010_02_45_47_4316_icon.png</href>
+        </Icon>
+      </Camera>
+      <Point>
+        <coordinates>-84.393505,33.762775,0</coordinates>
+      </Point>
+      <Icon>
+        <href>http://geospot.imtc.gatech.edu/image/03_12_2010_02_45_47_4316_cube_$[side].png</href>
+      </Icon>
+      <shape>cube</shape>
+    </PhotoOverlay>
+    <PhotoOverlay>
+      <Name>GeoSpot at Time 3</Name>
+      <description>World of Coke GeoSpot example 3</description>
+      <Camera>
+        <longitude>-84.393505</longitude>
+        <latitude>33.762775</latitude>
+        <altitude>0</altitude>
+        <TimeSpan> <!-- applicable time of this GeoSpot (map view may eventually filter on these values) -->
+          <begin>1997-07-16T21:30:15+03:00</begin>
+          <end>1997-07-16T22:30:15+03:00</end>
+        </TimeSpan>  
+        <Icon>
+          <href>http://geospot.imtc.gatech.edu/image/03_12_2010_02_45_47_4316_icon.png</href>
+        </Icon>
+      </Camera>
+      <Point>
+        <coordinates>-84.393505,33.762775,0</coordinates>
+      </Point>
+      <Icon>
+        <href>http://geospot.imtc.gatech.edu/image/03_12_2010_02_45_47_4316_cube_$[side].png</href>
+      </Icon>
+      <shape>cube</shape>
+    </PhotoOverlay>
+  </Folder>
+
+  <!-- KML document description -->
+  <name>GeoSpotFolder.kml</name>
+  <Snippet>Example of multiple PhotoOverlays establishing a panoramic GeoSpot</Snippet>
+  <description><![CDATA[
+    <div><p><b>Example of multiple PhotoOverlays establishing a panoramic GeoSpot</b></p>
+    <p>
+    <b>notes:</b>
+    <ul>
+    <li> a GeoSpot is a surveyed location the user indicates they are at
+    <li> the PhotoOverlay element replaces live video with a panorama
+    <li> multiple panoramas at different times can improve video replacement
+    <li> a Folder element lets the browser or user choose the desired image
+    <li> KAMRA alters the panorama controls for multi-panoramic GeoSpots
+    <ul>
+    <li> the detail page indicates the number of associated overlays
+    <li> an additional "multi-filmstrip" button allows overlay picking
+    </ul>
+    </ul>
+    ]]>
+  </description>          
+</Document>
+</kml>

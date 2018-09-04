@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+
+	<Style id="undecorated_style">
+		<BalloonStyle>
+			<displayMode>undecorated</displayMode>	<!-- kml:displayModeEnum -->
+		</BalloonStyle>
+	</Style>
+	 
+	<ScreenOverlay>
+		<name>Overlay HTML</name>
+		<description><![CDATA[
+        
+			<style type="text/css">				
+			
+#infoarea			{	width: 330px; height: 100px; left: -165px; top: 85px;
+						background-color: rgba(255, 255, 255, 0.8); color: rgba(0, 0, 0, 1);
+						vertical-align: bottom; text-align: left; position: absolute;}
+						
+						
+#busone				{	font-family: Helvetica, sans-serif; font-size: 6px; 
+						letter-spacing:0.1em;
+						color: rgba(0, 0, 0, 1);  text-align: left;
+						position: absolute; top: -5px; left: -20px; width: 200px; height:25px;line-height:110%; margin:-10px;}
+						
+						
+#bustwo				{	font-family: Helvetica, sans-serif; font-size: 6px; 
+						letter-spacing:0.1em;
+						color: rgba(0, 0, 0, 1);  text-align: left;
+						position: absolute; top: -5px; left: -20px; width: 200px; height:25px;line-height:110%;margin:-10px;}
+						
+						
+#busthree				{	font-family: Helvetica, sans-serif; font-size: 6px; 
+						letter-spacing:0.1em;
+						color: rgba(0, 0, 0, 1); text-align: left;
+						position: absolute; top: -5px; left: -20px; width:200px; height:25px; line-height:110%;margin:-10px;}
+					
+						
+#busfour				{	font-family: Helvetica, sans-serif; font-size: 6px; 
+						letter-spacing:0.1em;
+						color: rgba(0, 0, 0, 1);  text-align: left;
+						position: absolute; top: -5px; left: -20px; width: 200px; height:25px;line-height:110%;margin:-10px;}
+
+.nextbus			{	position: absolute; left: 190px; top: 10px;
+						font: Helvetica, sans-serif; font-size:6px;
+						letter-spacing: 0.1em;}
+					
+					
+.nextbustext			{	font-family: Helvetica, sans-serif; font-size: 6px; 
+						letter-spacing: 0.1em;
+						position: relative; top: 8px; left: -15px; float:right; line-height: 110%;}
+						
+.routeinfotext			{	font-family: Helvetica, sans-serif; font-size: 6px; 
+						letter-spacing: 0.1em;
+						position: relative; top: -19px; left: 15px;
+						text-align:left;line-height: 110%; margin-left:15px;margin-bottom:0px;}
+
+
+.routeicon			{	padding:3.3px; border: 0.5px solid white; 
+						width:16px; height:16px; margin-left:5px;}
+						
+
+</style>
+			
+			
+			
+			<div id="infoarea">
+			
+			<div id="bus_one">
+			
+			<img src="http://www.artsdigital.com/ar_browser/images/bus_unselected.png" class="routeicon"/>
+			
+			
+			<div class="routeinfotext">route description route description</span>
+			
+			</div>
+			
+			
+			<div id="bus_two">
+			
+			<img src="http://www.artsdigital.com/ar_browser/images/bus_unselected.png" class="routeicon"/>
+			
+			
+						<div class="routeinfotext">route description route description</span>
+			
+			</div>
+			
+			
+			<div id="bus_three">
+			
+			<img src="http://www.artsdigital.com/ar_browser/images/bus_unselected.png" class="routeicon"/>
+			
+			
+						<div class="routeinfotext">route description route description</span>
+			
+			</div>
+			
+			
+			<div id="bus_four">
+			
+			<img src="http://www.artsdigital.com/ar_browser/images/bus_unselected.png" class="routeicon"/>
+			
+			
+						<div class="routeinfotext">route description route description</span>
+			
+			</div>
+			
+			
+			
+			</div>
+			
+			]]>
+		</description>
+		<screenXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+		<styleUrl>#undecorated_style</styleUrl>
+	</ScreenOverlay>
+
+	<!-- KML document description -->
+	<name>OverlayHTML.kml</name>
+	<Snippet>Example of placing a ScreenOverlay HTML on the screen</Snippet>
+	<description><![CDATA[
+		<div><p><b>Example of placing a ScreenOverlay HTML on the screen</b></p>
+		<p>
+		<b>notes:</b>
+		<ul>
+		<li> the KARML extension allows the display of HTML content in screen overlays
+		<li> the KARML extension adds "unstyled" to the displayMode element
+		<li> setting styleUrl to an unstyled BalloonStyle overrides the Icon image
+		<li> each click of the button loads one of the basic examples in a channel
+		</ul>
+		]]>
+	</description>        	
+</Document>
+</kml>
